@@ -1,0 +1,14 @@
+*.aux
+*.lof
+*.log
+*.nlo
+*.out
+*.gz
+*.toc
+
+/chapter1/*.aux
+/chapter2/*.aux
+/chapter3/*.aux
+/chapter4/*.aux
+/chapter5/*.aux
+/overview/*.aux
