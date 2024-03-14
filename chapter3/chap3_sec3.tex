@@ -1,0 +1,18 @@
+\section{Thiết kế đường đi bao phủ cho đội hình chữ V}
+\label{sec:Oppath}
+% {\color{red} BỎ ĐOẠN RƯỜN RÀ NÀY, BIÊN TẬP NGẮN GỌN TẬP TRUNG VÀO MỤC TIÊU BÀI TOÁN, CHƯA CẦN NHẮC ĐẾN DRONE Ở ĐÂY
+% Ngày nay, khi nhiệt độ trái đất nóng lên từng ngày các thảm hoạ thiên nhiên cháy rừng đang ngày một xuất hiện nhiều hơn với mức độ nghiêm trọng. Việc biêt càng sớm về thảm hoạ con người càng có lợi thế để giảm thiểu thiệt hại cũng như khống chế đám cháy. Tuy nhiên với một diện tích lớn bất kỳ chúng ta có các giới hạn về mặt triển khai thiết bị. Để khắc phục vấnđề đấy việc sử dụng các máy bay không người lái là lựa chọn tối ưu. 
+Một vấn đề liên quan là hoạch định đường đi cho robot để nó có thể quét qua toàn bộ địa hình (khu vực mục tiêu). Vấn đề như vậy được gọi là lập kế hoạch đường đi bao phủ. Phần này trình bày một chiến lược tập trung vào việc xây dựng và tạo ra một tuyến đường đặc biệt tối ưu phục vụ cho hoạt động tuần tra và giám sát một vùng đa giác lồi quan tâm.
+
+Coi khu vực khảo sát là một đa giác lồi. Đàn robot sẽ xuất phát và kết thúc lần lượt tại điểm đầu $P_s$ và điểm cuối $P_e$, như minh họa trong Hình.\Ref{fig:SW1}. Trong phần này, chiến lược di chuyển tiến lùi được thực hiện để tạo ra một đường bao phủ tối ưu trong đó bầy đàn bám sát theo các đường thẳng, được gọi là đường đi bên trong khu vực khảo sát. Như vậy, chiến lược bao phủ của đội hình chữ V được thiết kế.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{chapter4/image/sweepline.drawio.pdf}
+        \caption{Đường đi tiến lui được tạo bởi thuật toán RCPP}
+        \label{fig:SW1}
+    \end{figure}
+    
+Đường đi của robot quét qua khu vực khảo sát được gọi là đường bao phủ. Nó cần được thiết kế để tối đa hóa vùng phủ sóng và giảm thiểu thời gian bay. Trong điều khiển đội hình, không có sự phân tách khu vực khảo sát nào là cách tiếp cận thích hợp để giải quyết vấn đề này \cite{cabreira2019survey}. Bằng cách đi theo đường gấp khúc \cite{maza2007multiple} cho phép tạo ra các đường quét song song trong khu vực khảo sát. Vì vậy, để thỏa mãn các yêu cầu đã nêu, các đường quét cần đáp ứng các điều kiện sau: quét toàn bộ khu vực khảo sát; giảm thiểu sự chồng chéo giữa vùng phủ sóng của các đường quét; và tối ưu hóa số lượt rẽ của bầy Robot.
+
+Trong đồ án này, các đường tiến lui (back and forth path) trong khu vực khảo sát được tạo ra bằng cách sử dụng kỹ thuật lập kế hoạch đường đi bao phủ \textbf{RCPP} (rotating calipers path planner) được đề xuất trong \cite{vasquez2020coverage}, và từ đó làm nó trơn tru hơn với nội suy đa thức spline.

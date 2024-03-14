@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: overview/title.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: overview/subtitle.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: overview/abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: overview/thank.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: overview/authorship.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: overview/approval.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: overview/contents.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: overview/abbreviation.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+The style file: vietnumeric.bst
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Database file #1: reference.bib
+You've used 6 entries,
+            2540 wiz_defined-function locations,
+            595 strings with 5879 characters,
+and the built_in function-call counts, 4803 in all, are:
+= -- 549
+> -- 67
+< -- 9
++ -- 49
+- -- 20
+* -- 212
+:= -- 373
+add.period$ -- 11
+call.type$ -- 6
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 594
+empty$ -- 345
+format.name$ -- 26
+if$ -- 1049
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 67
+newline$ -- 27
+num.names$ -- 8
+pop$ -- 215
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 313
+stack$ -- 0
+substring$ -- 218
+swap$ -- 514
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 26
+width$ -- 7
+write$ -- 65

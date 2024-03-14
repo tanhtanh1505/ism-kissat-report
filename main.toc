@@ -1,0 +1,36 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{ABSTRACT}{i}{chapter*.1}%
+\contentsline {chapter}{ACKNOWLEDGEMENT}{ii}{chapter*.2}%
+\contentsline {chapter}{AUTHORSHIP}{iii}{chapter*.3}%
+\contentsline {chapter}{SUPERVISOR’S APPROVAL}{iv}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Itemset mining tasks}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}SAT Encoding}{1}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Concept}{1}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}SAT Solver}{1}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}SAT Encoding}{1}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Application}{1}{subsection.1.2.4}%
+\contentsline {chapter}{\numberline {2}CNF Encoding optimization methods}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Propositional Expression}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Standard}{2}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Sequential Encounter Encoding for Itemset Mining Tasks}{3}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Kỹ thuật hình thành và duy trì đội hình đa robot, cấu trúc chữ V}{3}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Mô hình Leader-Follower}{3}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Đội hình chữ V}{4}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Mô hình điều khiển hành vi cho đội hình chữ V}{6}{subsection.3.1.3}%
+\contentsline {subsubsection}{Hành vi di chuyển đến đích}{7}{section*.10}%
+\contentsline {subsubsection}{Hành vi tránh vật cản}{8}{section*.12}%
+\contentsline {subsubsection}{Hành vi tránh va chạm giữa các robot}{9}{section*.14}%
+\contentsline {subsubsection}{Hành vi duy trì đội hình}{10}{section*.16}%
+\contentsline {section}{\numberline {3.2}Thiết kế đường đi bao phủ cho đội hình chữ V}{11}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Experiment}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Đường đi bao phủ}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Đường dẫn bao phủ tối ưu}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Chiến lược bao phủ đa robot với đội hình chữ V}{14}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Tìm các cặp cạnh đối đỉnh}{14}{subsection.4.3.1}%
+\contentsline {subsubsection}{Phương pháp tìm cặp điểm đối đỉnh}{16}{section*.21}%
+\contentsline {subsection}{\numberline {4.3.2}Tính toán đường đi tốt nhất cho từng cặp đối cực}{18}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Chọn một đường đi tối ưu từ tất cả các đường đi của các cặp đối cực}{21}{subsection.4.3.3}%
+\contentsline {chapter}{Conclusions}{22}{chapter*.28}%
+\contentsline {section}{\numberline {4.4}Mô phỏng tạo đường đi bao phủ}{22}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Thí nghiệm với mô hình robot là các chất điểm trong không gian 3D}{24}{section.4.5}%

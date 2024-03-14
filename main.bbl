@@ -1,0 +1,42 @@
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{cabreira2019survey}
+Tau{\~a}~M Cabreira, Lisane~B Brisolara và Ferreira~Jr Paulo~R (2019),
+  \enquote{Survey on coverage path planning with unmanned aerial vehicles}.
+  \emph{Drones}, tập~3, số~1, tr.~4.
+
+\bibitem{maza2007multiple}
+Ivan Maza và Anibal Ollero (2007), \enquote{Multiple uav cooperative searching
+  operation using polygon area decomposition and efficient coverage
+  algorithms}. Trong \enquote{Distributed Autonomous Robotic Systems 6}, tr.
+  221--230 (Springer).
+
+\bibitem{vasquez2020coverage}
+Juan~Irving Vasquez-Gomez, Magdalena Marciano-Melchor, Luis Valentin và
+  Juan~Carlos Herrera-Lozada (2020), \enquote{Coverage path planning for 2d
+  convex regions}. \emph{Journal of Intelligent \& Robotic Systems}, tập~97,
+  số~1, tr. 81--94.
+
+\bibitem{shamos1978computational}
+Michael~Ian Shamos (1978), \emph{Computational geometry.} (Yale University).
+
+\bibitem{10.1007/11841036_57}
+Umut~A. Acar, Guy~E. Blelloch, Kanat Tangwongsan và Jorge~L. Vittes (2006),
+  \enquote{Kinetic algorithms via self-adjusting computation}. Trong Yossi Azar
+  và Thomas Erlebach, biên soạn, \enquote{Algorithms -- ESA 2006}, tr.
+  636--647 (Springer Berlin Heidelberg, Berlin, Heidelberg), ISBN
+  978-3-540-38876-0.
+
+\bibitem{nam2016approach}
+LH~Nam, Loulin Huang, Xue~Jun Li và JF~Xu (2016), \enquote{An approach for
+  coverage path planning for uavs}. Trong \enquote{2016 IEEE 14th international
+  workshop on advanced motion control (AMC)}, tr. 411--416 (IEEE).
+
+\end{thebibliography}
