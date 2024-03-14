@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.14)  15 MAR 2024 01:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.14)  15 MAR 2024 01:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1177,7 +1177,13 @@ National University,
 ]
 \openout2 = `overview/authorship.aux'.
 
- (overview/authorship.tex) [3
+ (overview/authorship.tex
+Overfull \hbox (9.50359pt too wide) in paragraph at lines 5--9
+[]\OT1/lmr/m/n/13 I hereby declare that the thesis "OPTIMIZE CNF ENCODING FOR I
+TEMSET
+ []
+
+) [3
 
 
 
@@ -1193,8 +1199,7 @@ National University,
 ]
 \openout2 = `overview/contents.aux'.
 
-
-(overview/contents.tex (main.toc
+ (overview/contents.tex (main.toc
 LaTeX Font Info:    Calculating math sizes for size <13> on input line 7.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
 .
@@ -1306,7 +1311,7 @@ nh/.miktex/texmfs/install/fonts/type1/public/lm/lmbxi10.pfb></home/tanh/.miktex
 all/fonts/type1/public/lm/lmr12.pfb></home/tanh/.miktex/texmfs/install/fonts/ty
 pe1/public/lm/lmr17.pfb></home/tanh/.miktex/texmfs/install/fonts/type1/public/l
 m/lmri12.pfb>
-Output written on main.pdf (14 pages, 319927 bytes).
+Output written on main.pdf (14 pages, 319784 bytes).
 PDF statistics:
  230 PDF objects out of 1000 (max. 8388607)
  38 named destinations out of 1000 (max. 500000)
