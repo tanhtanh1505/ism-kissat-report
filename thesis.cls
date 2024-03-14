@@ -5,7 +5,7 @@
 \RequirePackage{times}
 \RequirePackage[fontsize=13pt]{scrextend}%thesis' requirements
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[english, vietnamese]{babel}
+\RequirePackage[english]{babel}
 \RequirePackage[a4paper, top=2.5cm, bottom=3cm, left=3cm, right=2cm]{geometry}%thesis' requirements
 \RequirePackage{array}
 \RequirePackage{titlesec}

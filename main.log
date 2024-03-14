@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.14)  14 MAR 2024 23:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.14)  15 MAR 2024 01:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -30,15 +30,6 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
 )
-(/home/tanh/.miktex/texmfs/install/tex/generic/oberdiek/hyphsubst.sty
-Package: hyphsubst 2016/05/16 v0.3 Substitute hyphenation patterns (HO)
-
-(/home/tanh/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-Package hyphsubst Info: New: \l@vietnamese
-(hyphsubst)             new value: 0 on input line 227.
-)
 (/home/tanh/.miktex/texmfs/install/tex/generic/babel/babel.sty
 Package: babel 2024/02/07 v24.2 The Babel package
 \babel@savecnt=\count197
@@ -56,175 +47,13 @@ Package: babel 2024/02/07 v24.2 The Babel package
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(/home/tanh/.miktex/texmfs/install/tex/latex/babel-vietnamese/vietnamese.ldf
-Language: vietnamese 
-
-Loading definitions for the Vietnamese font encoding
-(/home/tanh/.miktex/texmfs/install/tex/latex/vntex/t5enc.def
-File: t5enc.def 2006/11/21 v1.4 Vietnamese T5 encoding
-Now handling font encoding T5 ...
-... processing UTF-8 mapping file for font encoding T5
-
-(/home/tanh/.miktex/texmfs/install/tex/latex/vntex/t5enc.dfu
-File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
-   defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00BB (decimal 187)
-   defining Unicode char U+00C0 (decimal 192)
-   defining Unicode char U+00C1 (decimal 193)
-   defining Unicode char U+00C2 (decimal 194)
-   defining Unicode char U+00C3 (decimal 195)
-   defining Unicode char U+00C8 (decimal 200)
-   defining Unicode char U+00C9 (decimal 201)
-   defining Unicode char U+00CA (decimal 202)
-   defining Unicode char U+00CC (decimal 204)
-   defining Unicode char U+00CD (decimal 205)
-   defining Unicode char U+00D2 (decimal 210)
-   defining Unicode char U+00D3 (decimal 211)
-   defining Unicode char U+00D4 (decimal 212)
-   defining Unicode char U+00D5 (decimal 213)
-   defining Unicode char U+00D9 (decimal 217)
-   defining Unicode char U+00DA (decimal 218)
-   defining Unicode char U+00DD (decimal 221)
-   defining Unicode char U+00E0 (decimal 224)
-   defining Unicode char U+00E1 (decimal 225)
-   defining Unicode char U+00E2 (decimal 226)
-   defining Unicode char U+00E3 (decimal 227)
-   defining Unicode char U+00E8 (decimal 232)
-   defining Unicode char U+00E9 (decimal 233)
-   defining Unicode char U+00EA (decimal 234)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00F2 (decimal 242)
-   defining Unicode char U+00F3 (decimal 243)
-   defining Unicode char U+00F4 (decimal 244)
-   defining Unicode char U+00F5 (decimal 245)
-   defining Unicode char U+00F9 (decimal 249)
-   defining Unicode char U+00FA (decimal 250)
-   defining Unicode char U+00FD (decimal 253)
-   defining Unicode char U+0102 (decimal 258)
-   defining Unicode char U+0103 (decimal 259)
-   defining Unicode char U+0110 (decimal 272)
-   defining Unicode char U+0111 (decimal 273)
-   defining Unicode char U+0128 (decimal 296)
-   defining Unicode char U+0129 (decimal 297)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0168 (decimal 360)
-   defining Unicode char U+0169 (decimal 361)
-   defining Unicode char U+01A0 (decimal 416)
-   defining Unicode char U+01A1 (decimal 417)
-   defining Unicode char U+01AF (decimal 431)
-   defining Unicode char U+01B0 (decimal 432)
-   defining Unicode char U+1EA0 (decimal 7840)
-   defining Unicode char U+1EA1 (decimal 7841)
-   defining Unicode char U+1EA2 (decimal 7842)
-   defining Unicode char U+1EA3 (decimal 7843)
-   defining Unicode char U+1EA4 (decimal 7844)
-   defining Unicode char U+1EA5 (decimal 7845)
-   defining Unicode char U+1EA6 (decimal 7846)
-   defining Unicode char U+1EA7 (decimal 7847)
-   defining Unicode char U+1EA8 (decimal 7848)
-   defining Unicode char U+1EA9 (decimal 7849)
-   defining Unicode char U+1EAA (decimal 7850)
-   defining Unicode char U+1EAB (decimal 7851)
-   defining Unicode char U+1EAC (decimal 7852)
-   defining Unicode char U+1EAD (decimal 7853)
-   defining Unicode char U+1EAE (decimal 7854)
-   defining Unicode char U+1EAF (decimal 7855)
-   defining Unicode char U+1EB0 (decimal 7856)
-   defining Unicode char U+1EB1 (decimal 7857)
-   defining Unicode char U+1EB2 (decimal 7858)
-   defining Unicode char U+1EB3 (decimal 7859)
-   defining Unicode char U+1EB4 (decimal 7860)
-   defining Unicode char U+1EB5 (decimal 7861)
-   defining Unicode char U+1EB6 (decimal 7862)
-   defining Unicode char U+1EB7 (decimal 7863)
-   defining Unicode char U+1EB8 (decimal 7864)
-   defining Unicode char U+1EB9 (decimal 7865)
-   defining Unicode char U+1EBA (decimal 7866)
-   defining Unicode char U+1EBB (decimal 7867)
-   defining Unicode char U+1EBC (decimal 7868)
-   defining Unicode char U+1EBD (decimal 7869)
-   defining Unicode char U+1EBE (decimal 7870)
-   defining Unicode char U+1EBF (decimal 7871)
-   defining Unicode char U+1EC0 (decimal 7872)
-   defining Unicode char U+1EC1 (decimal 7873)
-   defining Unicode char U+1EC2 (decimal 7874)
-   defining Unicode char U+1EC3 (decimal 7875)
-   defining Unicode char U+1EC4 (decimal 7876)
-   defining Unicode char U+1EC5 (decimal 7877)
-   defining Unicode char U+1EC6 (decimal 7878)
-   defining Unicode char U+1EC7 (decimal 7879)
-   defining Unicode char U+1EC8 (decimal 7880)
-   defining Unicode char U+1EC9 (decimal 7881)
-   defining Unicode char U+1ECA (decimal 7882)
-   defining Unicode char U+1ECB (decimal 7883)
-   defining Unicode char U+1ECC (decimal 7884)
-   defining Unicode char U+1ECD (decimal 7885)
-   defining Unicode char U+1ECE (decimal 7886)
-   defining Unicode char U+1ECF (decimal 7887)
-   defining Unicode char U+1ED0 (decimal 7888)
-   defining Unicode char U+1ED1 (decimal 7889)
-   defining Unicode char U+1ED2 (decimal 7890)
-   defining Unicode char U+1ED3 (decimal 7891)
-   defining Unicode char U+1ED4 (decimal 7892)
-   defining Unicode char U+1ED5 (decimal 7893)
-   defining Unicode char U+1ED6 (decimal 7894)
-   defining Unicode char U+1ED7 (decimal 7895)
-   defining Unicode char U+1ED8 (decimal 7896)
-   defining Unicode char U+1ED9 (decimal 7897)
-   defining Unicode char U+1EDA (decimal 7898)
-   defining Unicode char U+1EDB (decimal 7899)
-   defining Unicode char U+1EDC (decimal 7900)
-   defining Unicode char U+1EDD (decimal 7901)
-   defining Unicode char U+1EDE (decimal 7902)
-   defining Unicode char U+1EDF (decimal 7903)
-   defining Unicode char U+1EE0 (decimal 7904)
-   defining Unicode char U+1EE1 (decimal 7905)
-   defining Unicode char U+1EE2 (decimal 7906)
-   defining Unicode char U+1EE3 (decimal 7907)
-   defining Unicode char U+1EE4 (decimal 7908)
-   defining Unicode char U+1EE5 (decimal 7909)
-   defining Unicode char U+1EE6 (decimal 7910)
-   defining Unicode char U+1EE7 (decimal 7911)
-   defining Unicode char U+1EE8 (decimal 7912)
-   defining Unicode char U+1EE9 (decimal 7913)
-   defining Unicode char U+1EEA (decimal 7914)
-   defining Unicode char U+1EEB (decimal 7915)
-   defining Unicode char U+1EEC (decimal 7916)
-   defining Unicode char U+1EED (decimal 7917)
-   defining Unicode char U+1EEE (decimal 7918)
-   defining Unicode char U+1EEF (decimal 7919)
-   defining Unicode char U+1EF0 (decimal 7920)
-   defining Unicode char U+1EF1 (decimal 7921)
-   defining Unicode char U+1EF2 (decimal 7922)
-   defining Unicode char U+1EF3 (decimal 7923)
-   defining Unicode char U+1EF4 (decimal 7924)
-   defining Unicode char U+1EF5 (decimal 7925)
-   defining Unicode char U+1EF6 (decimal 7926)
-   defining Unicode char U+1EF7 (decimal 7927)
-   defining Unicode char U+1EF8 (decimal 7928)
-   defining Unicode char U+1EF9 (decimal 7929)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201A (decimal 8218)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+201E (decimal 8222)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+2039 (decimal 8249)
-   defining Unicode char U+203A (decimal 8250)
-   defining Unicode char U+2423 (decimal 9251)
+(/home/tanh/.miktex/texmfs/install/tex/latex/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
 ))
-Package babel Info: Making " an active character on input line 147.
-))
-(/home/tanh/.miktex/texmfs/install/tex/generic/babel/locale/vi/babel-vietnamese
-.tex
-Package babel Info: Importing font and identification data for vietnamese
-(babel)             from babel-vi.ini. Reported on input line 11.
+(/home/tanh/.miktex/texmfs/install/tex/generic/babel/locale/en/babel-english.te
+x
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
 ) (/home/tanh/.miktex/texmfs/install/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
 \ttl@box=\box51
@@ -423,6 +252,10 @@ Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 (/home/tanh/.miktex/texmfs/install/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
+
+(/home/tanh/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
@@ -537,7 +370,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip74
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 29.
+Package hyperref Info: Option `colorlinks' set `false' on input line 31.
  (/home/tanh/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -656,7 +489,7 @@ Package tocbasic Info: setting babel extension for `nls' on input line 188.
 \@nomenclaturefile=\write3
 \openout3 = `main.nlo'.
 
-Package nomencl Info: Writing nomenclature file main.nlo on input line 36.
+Package nomencl Info: Writing nomenclature file main.nlo on input line 38.
 
 (/home/tanh/.miktex/texmfs/install/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
@@ -1169,7 +1002,7 @@ Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 \LT@p@ftn=\toks57
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
-4.
+6.
 
 (/home/tanh/.miktex/texmfs/install/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1183,50 +1016,29 @@ File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [14pt].
 
-(main.aux (overview/title.aux)
-LaTeX Font Info:    Trying to load font information for T5+lmr on input line 10
-.
-
-(/home/tanh/.miktex/texmfs/install/tex/latex/lm/t5lmr.fd
-File: t5lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-(overview/subtitle.aux) (overview/abstract.aux) (overview/thank.aux)
-(overview/authorship.aux) (overview/approval.aux) (overview/contents.aux)
-(overview/abbreviation.aux)
-
-LaTeX Warning: Label `fig:SW1' multiply defined.
-
-
-LaTeX Warning: Label `fig:anh3' multiply defined.
-
-)
+(main.aux (overview/title.aux) (overview/subtitle.aux) (overview/abstract.aux)
+(overview/thank.aux) (overview/authorship.aux) (overview/approval.aux)
+(overview/contents.aux) (overview/abbreviation.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 84.
-LaTeX Font Info:    Trying to load font information for T5+cmr on input line 84
-.
- (/home/tanh/.miktex/texmfs/install/tex/latex/vntex/t5cmr.fd
-File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
 
 (/home/tanh/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1283,7 +1095,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 84.
+Package hyperref Info: Link coloring OFF on input line 86.
 (main.out) (main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
@@ -1312,7 +1124,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 
 
 (overview/title.tex
-<overview/uet.png, id=126, 596.4684pt x 596.4684pt>
+<overview/uet.png, id=98, 596.4684pt x 596.4684pt>
 File: overview/uet.png Graphic file (type png)
 <use overview/uet.png>
 Package pdftex.def Info: overview/uet.png  used on input line 20.
@@ -1321,7 +1133,7 @@ Package pdftex.def Info: overview/uet.png  used on input line 20.
 
 
 {/home/tanh/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}{/home/tanh/.miktex
-/texmfs/install/fonts/enc/dvips/lm/lm-t5.enc} <./overview/uet.png>])
+/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc} <./overview/uet.png>])
 \openout2 = `overview/subtitle.aux'.
 
  (overview/subtitle.tex
@@ -1338,21 +1150,9 @@ l.36 \end{titlepage}
 \openout2 = `overview/abstract.aux'.
 
  (overview/abstract.tex
-Overfull \hbox (12.05814pt too wide) in paragraph at lines 5--6
-[]\T5/lmr/bx/n/13 Summary: \T5/lmr/m/n/13 In this thesis, we apply the "Sequent
-ial Encounter Encoding"method
- []
-
-
-Overfull \hbox (10.44086pt too wide) in paragraph at lines 5--6
-\T5/lmr/m/n/13 to optimize itemset mining tasks. This method has been proven ef
-fective in optimizing
- []
-
-
-Overfull \hbox (18.85661pt too wide) in paragraph at lines 5--6
-\T5/lmr/m/n/13 the search process for itemsets in data. By utilizing "Sequentia
-l Encounter Encoding"we
+Overfull \hbox (15.86224pt too wide) in paragraph at lines 5--6
+\OT1/lmr/m/n/13 Encounter Encoding" we aim to enhance the performance of itemse
+t mining algorithms
  []
 
 ) [1
@@ -1365,8 +1165,8 @@ l Encounter Encoding"we
 
  (overview/thank.tex
 Overfull \hbox (1.95952pt too wide) in paragraph at lines 7--8
-\T5/lmr/m/n/13 well as the University of Engineering and Technology - Vietnam N
-ational University,
+\OT1/lmr/m/n/13 well as the University of Engineering and Technology - Vietnam 
+National University,
  []
 
 ) [2
@@ -1439,25 +1239,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout7 = `main.toc'.
 
  [6]
-(main.lof [7
-
-])
+(main.lof)
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
-) [8]
+) [7
+
+]
 \openout2 = `overview/abbreviation.aux'.
 
  (overview/abbreviation.tex)
 No file main.nls.
-Ch\uhorn \ohorn ng 1.
+Chapter 1.
 (chapter1/chap1_sec1.tex) (chapter1/chap1_sec2.tex)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.104 \chapter
-              {CNF Encoding optimization methods} [1
+l.106 \chapter
+              {SAT-based Encoding of Itemset Mining} [1
 
 
 
@@ -1465,373 +1265,50 @@ l.104 \chapter
 
 
 ]
-Ch\uhorn \ohorn ng 2.
-(chapter2/chap2_sec1.tex) (chapter2/chap2_sec2.tex) [2
+Chapter 2.
+(chapter2/chap2_sec1.tex) (chapter2/chap2_sec2.tex) (chapter2/chap2_sec3.tex)
+[2
 
 ]
-Ch\uhorn \ohorn ng 3.
-
-Overfull \hbox (7.76816pt too wide) in paragraph at lines 108--108
-|\T5/lmr/m/n/20.74 Sequential Encounter Encoding for Itemset Mining Tasks| 
- []
-
-(chapter3/chap3_sec1.tex
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-.
-
-(/home/tanh/.miktex/texmfs/install/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [3
-
-{/home/tanh/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}]
-<chapter3/image/FOVDr.pdf, id=276, 320.19624pt x 291.0875pt>
-File: chapter3/image/FOVDr.pdf Graphic file (type pdf)
-<use chapter3/image/FOVDr.pdf>
-Package pdftex.def Info: chapter3/image/FOVDr.pdf  used on input line 20.
-(pdftex.def)             Requested size: 227.62206pt x 206.93117pt.
-
-
-pdfTeX warning: pdflatex (file ./chapter3/image/SwarmRobotic_.drawio.pdf): PDF 
-inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<chapter3/image/SwarmRobotic_.drawio.pdf, id=278, 1496.59125pt x 808.01875pt>
-File: chapter3/image/SwarmRobotic_.drawio.pdf Graphic file (type pdf)
-<use chapter3/image/SwarmRobotic_.drawio.pdf>
-Package pdftex.def Info: chapter3/image/SwarmRobotic_.drawio.pdf  used on input
- line 36.
-(pdftex.def)             Requested size: 364.19667pt x 196.62859pt.
-<chapter3/image/a.png, id=279, 622.57594pt x 470.50781pt>
-File: chapter3/image/a.png Graphic file (type png)
-<use chapter3/image/a.png>
-Package pdftex.def Info: chapter3/image/a.png  used on input line 42.
-(pdftex.def)             Requested size: 273.14923pt x 206.42818pt.
-[4{/home/tanh/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/home/ta
-nh/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc} <./chapter3/image/FOVDr
-.pdf>]
-
-LaTeX Warning: Command \l invalid in math mode on input line 66.
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 66.
-
-[5{/home/tanh/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc} <./chapt
-er3/image/SwarmRobotic_.drawio.pdf> <./chapter3/image/a.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
-
- []
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 104.
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 104.
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 104.
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 104.
-
-<chapter3/image/LF_Crop.pdf, id=313, 571.13374pt x 465.74pt>
-File: chapter3/image/LF_Crop.pdf Graphic file (type pdf)
-<use chapter3/image/LF_Crop.pdf>
-Package pdftex.def Info: chapter3/image/LF_Crop.pdf  used on input line 107.
-(pdftex.def)             Requested size: 318.66948pt x 259.86034pt.
-) (chapter3/chap3_sec2.tex
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6{/home/tanh/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}]
-
-pdfTeX warning: pdflatex (file ./chapter3/image/Behavior_m2g_cropped.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<chapter3/image/Behavior_m2g_cropped.pdf, id=322, 238.20996pt x 222.28044pt>
-File: chapter3/image/Behavior_m2g_cropped.pdf Graphic file (type pdf)
-<use chapter3/image/Behavior_m2g_cropped.pdf>
-Package pdftex.def Info: chapter3/image/Behavior_m2g_cropped.pdf  used on input
- line 13.
-(pdftex.def)             Requested size: 136.57462pt x 127.44394pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7 <./chapter3/image/LF_Crop.pdf>]
-
-pdfTeX warning: pdflatex (file ./chapter3/image/Behavior_obs_cropped.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<chapter3/image/Behavior_obs_cropped.pdf, id=350, 240.47995pt x 352.62082pt>
-File: chapter3/image/Behavior_obs_cropped.pdf Graphic file (type pdf)
-<use chapter3/image/Behavior_obs_cropped.pdf>
-Package pdftex.def Info: chapter3/image/Behavior_obs_cropped.pdf  used on input
- line 41.
-(pdftex.def)             Requested size: 136.57462pt x 200.26958pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8 <./chapter3/image/Behavior_m2g_cropped.pdf>]
-
-pdfTeX warning: pdflatex (file ./chapter3/image/Behavior_AvoidRobot_cropped.pdf
-): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<chapter3/image/Behavior_AvoidRobot_cropped.pdf, id=369, 291.48906pt x 235.4185
-8pt>
-File: chapter3/image/Behavior_AvoidRobot_cropped.pdf Graphic file (type pdf)
-<use chapter3/image/Behavior_AvoidRobot_cropped.pdf>
-Package pdftex.def Info: chapter3/image/Behavior_AvoidRobot_cropped.pdf  used o
-n input line 71.
-(pdftex.def)             Requested size: 136.57462pt x 110.3019pt.
-[9 <./chapter3/image/Behavior_obs_cropped.pdf> <./chapter3/image/Behavior_Avoid
-Robot_cropped.pdf>]
-<chapter3/image/V_Form_Crop.pdf, id=397, 334.24875pt x 230.8625pt>
-File: chapter3/image/V_Form_Crop.pdf Graphic file (type pdf)
-<use chapter3/image/V_Form_Crop.pdf>
-Package pdftex.def Info: chapter3/image/V_Form_Crop.pdf  used on input line 98.
-
-(pdftex.def)             Requested size: 227.62206pt x 157.22043pt.
- [10 <./chapter3/image/V_Form_Crop.pdf>])
-(chapter3/chap3_sec3.tex
-<chapter4/image/sweepline.drawio.pdf, id=418, 2180.145pt x 2368.85pt>
-File: chapter4/image/sweepline.drawio.pdf Graphic file (type pdf)
-<use chapter4/image/sweepline.drawio.pdf>
-Package pdftex.def Info: chapter4/image/sweepline.drawio.pdf  used on input lin
-e 11.
-(pdftex.def)             Requested size: 227.62206pt x 247.30884pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11]) [12 <./chapter4/image/sweepline.drawio.pdf>]
-Ch\uhorn \ohorn ng 4.
-(chapter4/chap4_sec1.tex
-File: chapter4/image/sweepline.drawio.pdf Graphic file (type pdf)
-<use chapter4/image/sweepline.drawio.pdf>
-Package pdftex.def Info: chapter4/image/sweepline.drawio.pdf  used on input lin
-e 8.
-(pdftex.def)             Requested size: 227.62206pt x 247.30884pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-[13
-
-]) (chapter4/chap4_sec2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-[14]
-<chapter4/image/anh1.png, id=458, 271.0125pt x 152.82094pt>
-File: chapter4/image/anh1.png Graphic file (type png)
-<use chapter4/image/anh1.png>
-Package pdftex.def Info: chapter4/image/anh1.png  used on input line 19.
-(pdftex.def)             Requested size: 318.66948pt x 179.69984pt.
- [15]
-<chapter4/image/anh2.png, id=467, 687.31781pt x 487.8225pt>
-File: chapter4/image/anh2.png Graphic file (type png)
-<use chapter4/image/anh2.png>
-Package pdftex.def Info: chapter4/image/anh2.png  used on input line 29.
-(pdftex.def)             Requested size: 318.66948pt x 226.17264pt.
- [16 <./chapter4/image/anh1.png>]
-<chapter4/image/anh3.png, id=476, 689.57625pt x 514.17094pt>
-File: chapter4/image/anh3.png Graphic file (type png)
-<use chapter4/image/anh3.png>
-Package pdftex.def Info: chapter4/image/anh3.png  used on input line 37.
-(pdftex.def)             Requested size: 318.66948pt x 237.61205pt.
- [17 <./chapter4/image/anh2.png>]
-<chapter4/image/anh4.png, id=483, 690.32906pt x 508.14844pt>
-File: chapter4/image/anh4.png Graphic file (type png)
-<use chapter4/image/anh4.png>
-Package pdftex.def Info: chapter4/image/anh4.png  used on input line 47.
-(pdftex.def)             Requested size: 318.66948pt x 234.573pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
-
- []
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 57.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 57.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 57.
-LaTeX Font Info:    Trying to load font information for T5+lmtt on input line 5
-9.
-(/home/tanh/.miktex/texmfs/install/tex/latex/lm/t5lmtt.fd
-File: t5lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
-(chapter4/chap4_sec3.tex [18 <./chapter4/image/anh3.png>]
-<chapter4/image/anh5.png, id=491, 304.13625pt x 185.19188pt>
-File: chapter4/image/anh5.png Graphic file (type png)
-<use chapter4/image/anh5.png>
-Package pdftex.def Info: chapter4/image/anh5.png  used on input line 9.
-(pdftex.def)             Requested size: 318.66948pt x 194.04744pt.
- [19 <./chapter4/image/anh4.png>] [20 <./chapter4/image/anh5.png>]) [21] (chapt
-er5/chap5_sec1.tex
-<chapter5/image/anh1_op.png, id=546, 558.58687pt x 540.51938pt>
-File: chapter5/image/anh1_op.png Graphic file (type png)
-<use chapter5/image/anh1_op.png>
-Package pdftex.def Info: chapter5/image/anh1_op.png  used on input line 38.
-(pdftex.def)             Requested size: 309.56265pt x 299.55467pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<chapter5/image/anh2_op.png, id=548, 583.42969pt x 555.57562pt>
-File: chapter5/image/anh2_op.png Graphic file (type png)
-<use chapter5/image/anh2_op.png>
-Package pdftex.def Info: chapter5/image/anh2_op.png  used on input line 67.
-(pdftex.def)             Requested size: 309.56265pt x 294.79276pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<chapter5/image/anh3_op.png, id=550, 593.96906pt x 569.12625pt>
-File: chapter5/image/anh3_op.png Graphic file (type png)
-<use chapter5/image/anh3_op.png>
-Package pdftex.def Info: chapter5/image/anh3_op.png  used on input line 96.
-(pdftex.def)             Requested size: 309.56265pt x 296.62471pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[22
+Chapter 3.
+(chapter3/chap3_sec1.tex) (chapter3/chap3_sec2.tex) [3
 
 ]
+Chapter 4.
+(chapter4/chap4_sec1.tex) (chapter4/chap4_sec2.tex) [4
 
-LaTeX Warning: Text page 23 contains only floats.
+]
+(chapter5/chap5_sec1.tex)
+No file main.bbl.
+[5
 
-[23 <./chapter5/image/anh1_op.png> <./chapter5/image/anh2_op.png>])
-(chapter5/chap5_sec2.tex [24 <./chapter5/image/anh3_op.png>]
-<chapter5/image/coverage1.png, id=563, 633.86812pt x 639.89063pt>
-File: chapter5/image/coverage1.png Graphic file (type png)
-<use chapter5/image/coverage1.png>
-Package pdftex.def Info: chapter5/image/coverage1.png  used on input line 16.
-(pdftex.def)             Requested size: 364.19667pt x 367.66086pt.
-<chapter5/image/coverage.png, id=564, 1236.11812pt x 613.54219pt>
-File: chapter5/image/coverage.png Graphic file (type png)
-<use chapter5/image/coverage.png>
-Package pdftex.def Info: chapter5/image/coverage.png  used on input line 23.
-(pdftex.def)             Requested size: 364.19667pt x 180.76869pt.
-<chapter5/image/Median_Dis.pdf, id=565, 433.62pt x 289.08pt>
-File: chapter5/image/Median_Dis.pdf Graphic file (type pdf)
-<use chapter5/image/Median_Dis.pdf>
-Package pdftex.def Info: chapter5/image/Median_Dis.pdf  used on input line 36.
-(pdftex.def)             Requested size: 364.19667pt x 242.80789pt.
-<chapter5/image/Median_Err.pdf, id=566, 433.62pt x 289.08pt>
-File: chapter5/image/Median_Err.pdf Graphic file (type pdf)
-<use chapter5/image/Median_Err.pdf>
-Package pdftex.def Info: chapter5/image/Median_Err.pdf  used on input line 43.
-(pdftex.def)             Requested size: 364.19667pt x 242.80789pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 52.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 52.
- [25] [26 <./chapter5/image/coverage1.png> <./chapter5/image/coverage.png>] [27
- <./chapter5/image/Median_Dis.pdf> <./chapter5/image/Median_Err.pdf>]
-<chapter5/image/3robot.png, id=600, 1153.911pt x 563.706pt>
-File: chapter5/image/3robot.png Graphic file (type png)
-<use chapter5/image/3robot.png>
-Package pdftex.def Info: chapter5/image/3robot.png  used on input line 79.
-(pdftex.def)             Requested size: 364.19667pt x 177.91238pt.
-<chapter5/image/5robot.png, id=601, 1156.32pt x 565.51276pt>
-File: chapter5/image/5robot.png Graphic file (type png)
-<use chapter5/image/5robot.png>
-Package pdftex.def Info: chapter5/image/5robot.png  used on input line 86.
-(pdftex.def)             Requested size: 364.19667pt x 178.11157pt.
-<chapter5/image/7robot.png, id=602, 1155.71774pt x 568.524pt>
-File: chapter5/image/7robot.png Graphic file (type png)
-<use chapter5/image/7robot.png>
-Package pdftex.def Info: chapter5/image/7robot.png  used on input line 93.
-(pdftex.def)             Requested size: 364.19667pt x 179.15541pt.
- [28 <./chapter5/image/3robot.png> <./chapter5/image/5robot.png>]
-<chapter5/image/CoverageTime.pdf, id=609, 433.62pt x 289.08pt>
-File: chapter5/image/CoverageTime.pdf Graphic file (type pdf)
-<use chapter5/image/CoverageTime.pdf>
-Package pdftex.def Info: chapter5/image/CoverageTime.pdf  used on input line 10
-2.
-(pdftex.def)             Requested size: 364.19667pt x 242.80789pt.
- [29 <./chapter5/image/7robot.png> <./chapter5/image/CoverageTime.pdf>]
-<chapter5/image/CoveragePer.pdf, id=619, 433.62pt x 289.08pt>
-File: chapter5/image/CoveragePer.pdf Graphic file (type pdf)
-<use chapter5/image/CoveragePer.pdf>
-Package pdftex.def Info: chapter5/image/CoveragePer.pdf  used on input line 116
-.
-(pdftex.def)             Requested size: 364.19667pt x 242.80789pt.
- [30]
-<chapter5/image/obs.png, id=626, 1115.66812pt x 557.08125pt>
-File: chapter5/image/obs.png Graphic file (type png)
-<use chapter5/image/obs.png>
-Package pdftex.def Info: chapter5/image/obs.png  used on input line 131.
-(pdftex.def)             Requested size: 218.51521pt x 109.11067pt.
-<chapter5/image/obs3d.png, id=627, 927.465pt x 621.82312pt>
-File: chapter5/image/obs3d.png Graphic file (type png)
-<use chapter5/image/obs3d.png>
-Package pdftex.def Info: chapter5/image/obs3d.png  used on input line 138.
-(pdftex.def)             Requested size: 223.07211pt x 149.5537pt.
- [31 <./chapter5/image/CoveragePer.pdf>]
-<chapter5/image/poserrobs.png, id=635, 1230.09563pt x 666.23906pt>
-File: chapter5/image/poserrobs.png Graphic file (type png)
-<use chapter5/image/poserrobs.png>
-Package pdftex.def Info: chapter5/image/poserrobs.png  used on input line 148.
-(pdftex.def)             Requested size: 364.19667pt x 197.25043pt.
-
-[32 <./chapter5/image/obs.png> <./chapter5/image/obs3d.png> <./chapter5/image/p
-oserrobs.png>]) (main.bbl [33]) [34
-
-] (main.aux (overview/title.aux)
-(overview/subtitle.aux) (overview/abstract.aux) (overview/thank.aux)
-(overview/authorship.aux) (overview/approval.aux) (overview/contents.aux)
-(overview/abbreviation.aux))
+] (main.aux (overview/title.aux) (overview/subtitle.aux)
+(overview/abstract.aux) (overview/thank.aux) (overview/authorship.aux)
+(overview/approval.aux) (overview/contents.aux) (overview/abbreviation.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1DF76BC56C26608EAC53BE6593309F99;6306.
+(rerunfilecheck)             Checksum: EBD728AA69D84BA574830874C5B77FEA;3715.
  ) 
 Here is how much of TeX's memory you used:
- 29284 strings out of 476371
- 543875 string characters out of 5793759
- 1941187 words of memory out of 5000000
- 50512 multiletter control sequences out of 15000+600000
- 745793 words of font info for 128 fonts, out of 8000000 for 9000
+ 28111 strings out of 476371
+ 521733 string characters out of 5793759
+ 1934187 words of memory out of 5000000
+ 49534 multiletter control sequences out of 15000+600000
+ 619389 words of font info for 74 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 110i,15n,107p,1538b,678s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/tanh/.miktex/texmfs/install/fonts/type1/public/lm/lmbx10.pfb></home/ta
-nh/.miktex/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></home/tanh/.miktex/
-texmfs/install/fonts/type1/public/lm/lmbx7.pfb></home/tanh/.miktex/texmfs/insta
-ll/fonts/type1/public/lm/lmbxi10.pfb></home/tanh/.miktex/texmfs/install/fonts/t
-ype1/public/lm/lmex10.pfb></home/tanh/.miktex/texmfs/install/fonts/type1/public
-/lm/lmmi10.pfb></home/tanh/.miktex/texmfs/install/fonts/type1/public/lm/lmmi12.
-pfb></home/tanh/.miktex/texmfs/install/fonts/type1/public/lm/lmmi7.pfb></home/t
-anh/.miktex/texmfs/install/fonts/type1/public/lm/lmmi9.pfb></home/tanh/.miktex/
-texmfs/install/fonts/type1/public/lm/lmr10.pfb></home/tanh/.miktex/texmfs/insta
-ll/fonts/type1/public/lm/lmr12.pfb></home/tanh/.miktex/texmfs/install/fonts/typ
-e1/public/lm/lmr17.pfb></home/tanh/.miktex/texmfs/install/fonts/type1/public/lm
-/lmr6.pfb></home/tanh/.miktex/texmfs/install/fonts/type1/public/lm/lmr7.pfb></h
-ome/tanh/.miktex/texmfs/install/fonts/type1/public/lm/lmr8.pfb></home/tanh/.mik
-tex/texmfs/install/fonts/type1/public/lm/lmr9.pfb></home/tanh/.miktex/texmfs/in
-stall/fonts/type1/public/lm/lmri10.pfb></home/tanh/.miktex/texmfs/install/fonts
-/type1/public/lm/lmri12.pfb></home/tanh/.miktex/texmfs/install/fonts/type1/publ
-ic/lm/lmsy10.pfb></home/tanh/.miktex/texmfs/install/fonts/type1/public/lm/lmsy9
-.pfb></home/tanh/.miktex/texmfs/install/fonts/type1/public/lm/lmtt10.pfb></home
-/tanh/.miktex/texmfs/install/fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (44 pages, 3004481 bytes).
+ 110i,5n,107p,569b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</home/tanh/.miktex/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></home/ta
+nh/.miktex/texmfs/install/fonts/type1/public/lm/lmbxi10.pfb></home/tanh/.miktex
+/texmfs/install/fonts/type1/public/lm/lmr10.pfb></home/tanh/.miktex/texmfs/inst
+all/fonts/type1/public/lm/lmr12.pfb></home/tanh/.miktex/texmfs/install/fonts/ty
+pe1/public/lm/lmr17.pfb></home/tanh/.miktex/texmfs/install/fonts/type1/public/l
+m/lmri12.pfb>
+Output written on main.pdf (14 pages, 319927 bytes).
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
- 165 named destinations out of 1000 (max. 500000)
- 409 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
+ 208 words of extra memory for PDF output out of 10000 (max. 10000000)
 

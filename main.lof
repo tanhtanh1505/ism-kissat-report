@@ -1,31 +1,5 @@
-\babel@toc {vietnamese}{}\relax 
+\babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Camera's FOV}}{4}{figure.caption.7}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Mô hình hệ thống cho việc hình thành nên đội hình chữ V}}{5}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Tạo cấu trúc chữ V ảo}}{7}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Hành vi đi tới đích}}{8}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Di chuyển tránh vật cản}}{9}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Tránh va chạm với các robot khác}}{9}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Giữ đội hình}}{10}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Đường đi tiến lui được tạo bởi thuật toán RCPP}}{12}{figure.caption.18}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The back-and-forth path is created by RCPP}}{14}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Hình Polygon}}{16}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Xác định cặp đối đỉnh theo chiều thuận kim đồng hồ}}{17}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Xác định sự khác biệt giữa 2 góc theo chiều thuận kim đồng hồ}}{18}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Xác định cặp đối đỉnh theo chiều ngược kim đồng hồ}}{19}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Xây dựng đường đi }}{20}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Bản đồ 1}}{23}{figure.caption.29}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Bản đồ 2}}{23}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Bản đồ 3}}{24}{figure.caption.31}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Phạm vi bao phủ đội hình chữ V}}{26}{figure.caption.32}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Kết quả sự ổn định của quá trình di chuyển đội hình chữ V}}{27}{figure.caption.33}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Mô phỏng quá trình 3 robot thực hiện quá trình bao phủ}}{28}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Mô phỏng quá trình 5 robot thực hiện quá trình bao phủ}}{28}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Mô phỏng quá trình 7 robot thực hiện quá trình bao phủ}}{29}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Thời gian bao phủ với đội hình robot chữ V}}{29}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Tỷ lệ bao phủ với đội hình robot chữ V}}{31}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Quá trình di chuyển tránh chướng ngại vật của đội hình chữ V }}{32}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Khoảng cách trung vị giữa 2 con robot liên tiếp}}{32}{figure.caption.41}%

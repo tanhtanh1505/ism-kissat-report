@@ -1,7 +1,9 @@
 \documentclass[14pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
-\usepackage[vietnamese=nohyphenation]{hyphsubst}
-\usepackage[vietnamese]{babel}
+% \usepackage[vietnamese=nohyphenation]{hyphsubst}
+% \usepackage[vietnamese]{babel}
+% use english
+\usepackage[english]{babel}
 \usepackage{titlesec, blindtext, color}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
@@ -101,28 +103,26 @@ linkbordercolor = {white}
 \input{chapter1/chap1_sec2}
 
 
-\chapter{CNF Encoding optimization methods}
+\chapter{SAT-based Encoding of Itemset Mining}
 \input{chapter2/chap2_sec1}
 \input{chapter2/chap2_sec2}
+\input{chapter2/chap2_sec3}
 
-\chapter{Sequential Encounter Encoding for Itemset Mining Tasks}
+\chapter{Sequential Encounter Encoding for Optimization}
 \input{chapter3/chap3_sec1}
 \input{chapter3/chap3_sec2}
-\input{chapter3/chap3_sec3}
 
-\chapter{Experiment}
+\chapter{Experiments}
 \input{chapter4/chap4_sec1}
 \input{chapter4/chap4_sec2}
-\input{chapter4/chap4_sec3}
 
 \chapter*{Conclusions}
 \addcontentsline{toc}{chapter}{Conclusions}
 \input{chapter5/chap5_sec1}
-\input{chapter5/chap5_sec2}
 
 
 % \printbibliography
-\bibliographystyle{vietnumeric}
+% \bibliographystyle{vietnumeric}
 \bibliography{reference}
 \end{document}
 \addcontentsline{toc}{chapter}{TÓM TẮT}
