@@ -1,2 +1,69 @@
 In this chapter, we present how to encode the itemset mining problem into a SAT problem. And we will discuss the limitation of the standard method.
 \section{Constraint Encoding}
+To resolve the itemset mining problem, we using the SAT encoding approach.
+In essence, SAT encoding involves the creation of variables and the imposition of constraints to represent the itemset mining problem.
+These variables serve to denote the presence or absence of items within a candidate itemset and are subjected to linear inequalities to ensure the itemset's support.
+
+In the context of a transaction database $D$ = {(1,$T_1$),...,(m,$T_m$)} and a minimum support threshold $\lambda$,
+each item in the candidate itemset $X$, we denote:
+\begin{itemize}
+    \item $p_a$: is $true$ if the item $a$ is in the itemset $X$, otherwise $p_a = false$
+    \item $q_i$: is $true$ if the transaction $T_i$ contains the itemset $X$, otherwise $q_i = false$
+\end{itemize}
+Alongside, a set of constraints is imposed on these variables to establish a one-to-one correspondence between the models of the resulting CNF formula and the set of itemsets.
+
+Firstly, to capture all the transactions where the candidate itemset does not appear, we use following constraint:
+\begin{equation}
+    \label{eq:1}
+    \bigwedge_{i=1}^{m} (q_i \leftrightarrow \bigwedge_{a \notin T_i} \neg p_a)
+\end{equation}
+This constraint guarantees that $q_i$ is true if and only if either all items not in $T_i$ are also not in the itemset $X$, or transaction $T_i$ contains the itemset $X$.
+
+Constraint \ref{eq:1} can be rewritten as follows:
+\begin{equation}
+    \label{eq:2}
+    \bigwedge_{a \in \Omega} \bigwedge_{a \notin T_i} (\neg p_a \vee \neg q_i)
+\end{equation}
+\begin{equation}
+    \label{eq:3}
+    \bigwedge_{T_i \in D} ((\bigvee_{a \notin T_i} p_a) \vee q_i)
+\end{equation}
+
+
+Finally, the frequency constraint, can be simply expressed as follows:
+\begin{equation}
+    \label{eq:4}
+    \sum_{i=1}^{m} q_i \geq \lambda
+\end{equation}
+
+For example, with a dataset of transactions from a retail store in table \ref{tab:example_dataset_in_real}, we mark:
+a = apple, b = banana, c = cherry, d = mango. Then we have database transactions
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c| c c c c |}
+        \hline
+        \textbf{Tid} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} \\
+        \hline
+        1            & 1          & 1          & 1          & 0          \\
+        2            & 1          & 0          & 0          & 1          \\
+        3            & 1          & 0          & 1          & 0          \\
+        4            & 0          & 0          & 1          & 1          \\
+        5            & 1          & 0          & 1          & 1          \\
+        \hline
+    \end{tabular}
+    \caption{Example of a dataset of transactions after convert}
+    \label{tab:example_dataset_after_convert}
+\end{table}
+
+The itemset mining problem will be defined as:
+\begin{equation*}
+    \begin{aligned}
+         & q_1 \leftrightarrow (\neg p_d                ) \\
+         & q_2 \leftrightarrow (\neg p_b \wedge \neg p_c) \\
+         & q_3 \leftrightarrow (\neg p_b \wedge \neg p_d) \\
+         & q_4 \leftrightarrow (\neg p_a \wedge \neg p_d) \\
+         & q_5 \leftrightarrow (\neg p_b                ) \\
+         & q_1 + q_2 + q_3 + q_4 + q_5 \geq \lambda
+    \end{aligned}
+\end{equation*}
