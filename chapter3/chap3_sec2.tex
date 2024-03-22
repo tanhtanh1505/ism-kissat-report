@@ -1,1 +1,50 @@
 \section{Optimization CNF Encoding using Sequential Encounter Encoding}
+
+First, we add following constraint for relationship between $q$ and $r$:
+
+\begin{equation}
+    \label{eq:7}
+    \begin{aligned}
+        q_i \rightarrow r_{i1}           & \quad \forall i \in [1, n] \\
+        \neg q_i \rightarrow \neg r_{ii} & \quad \forall i \in [1, n] \\
+    \end{aligned}
+\end{equation}
+
+This constraint guarantees that if $q_i$ is true, then $r_{i1}$ must be true.
+And if $q_i$ is false, $r_{ii}$ must be false.
+
+% TODO: Explain the meaning of the constraint
+Secondly, we encode
+\begin{equation}
+    \label{eq:8}
+    \neg r_{ij} \quad \forall i \in [1, \lambda - 1], j \in [i + 1, \lambda]
+\end{equation}
+
+% TODO: Explain the meaning of the constraint
+Thirdly, we encode
+\begin{equation}
+    \label{eq:9}
+    \neg r_{i-1,j} \rightarrow r_{ij} \quad \forall i \in [2, n], j \in [1, \lambda]
+\end{equation}
+
+%TODO: Explain the meaning of the constraint
+Fourthly, we encode
+\begin{equation}
+    \label{eq:10}
+    \begin{aligned}
+        q_{i} \wedge r_{i-1,j-1} \rightarrow r_{ij}                    & \quad \forall i \in [2, n], j \in [2, \lambda] \\
+        \neg q_{i} \wedge \neg r_{i-1,j} \rightarrow \neg r_{ij}       & \quad \forall i \in [2, n], j \in [1, \lambda] \\
+        \neg r_{i-1,j} \wedge \neg r_{i-1,j-1} \rightarrow \neg r_{ij} & \quad \forall i \in [2, n], j \in [2, \lambda] \\
+    \end{aligned}
+\end{equation}
+
+%TODO: Explain the meaning of the constraint
+Finally, we encode
+\begin{equation}
+    \label{eq:11}
+    \begin{gathered}
+        r_{n-1,\lambda} \vee (q_{\lambda} \wedge r_{n-1,\lambda-1})                                    \\
+        \neg q_n \rightarrow r_{n-1,\lambda}                                                           \\
+        \neg q_i \wedge r_{j,\lambda} \rightarrow r_{i-1,\lambda} \quad \forall i \in [\lambda + 1, n] \\
+    \end{gathered}
+\end{equation}
