@@ -33,17 +33,19 @@ linkbordercolor = {white}
 \usepackage{lmodern}
 \usepackage[font=large,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 
-% abbreviation
-\usepackage{nomencl}
-\makenomenclature
-\renewcommand{\nomname}{ABBREVIATIONS}
-%% This code creates the groups
-% -----------------------------------------
-\usepackage{etoolbox}
-\renewcommand\nomgroup[1]{%
-  \item[\bfseries
-]}
-% ------
+% % abbreviation
+% \usepackage{nomencl}
+% \makenomenclature
+% \renewcommand{\nomname}{ABBREVIATIONS}
+% %% This code creates the groups
+% % -----------------------------------------
+% \usepackage{etoolbox}
+% \renewcommand\nomgroup[1]{%
+%   \item[\bfseries
+%   \ifstrequal{#1}{S}{Symbols}{%
+%     \ifstrequal{#1}{A}{Abbreviations}{}}%
+%   ]}
+% % ------
 
 
 \usepackage{subcaption}
@@ -94,6 +96,7 @@ linkbordercolor = {white}
 \include{overview/approval}
 \include{overview/contents}
 \include{overview/abbreviation}
+\include{overview/preface}
 
 \pagenumbering{arabic}
 \fontsize{13}{15}\selectfont
@@ -101,6 +104,7 @@ linkbordercolor = {white}
 \chapter{Introduction}
 \input{chapter1/chap1_sec1}
 \input{chapter1/chap1_sec2}
+\input{chapter1/chap1_sec_3}
 
 
 \chapter{SAT-based Encoding of Itemset Mining}
@@ -122,8 +126,5 @@ linkbordercolor = {white}
 
 
 % \printbibliography
-% \bibliographystyle{vietnumeric}
 \bibliography{reference}
 \end{document}
-\addcontentsline{toc}{chapter}{TÓM TẮT}
-\fontsize{13}{15}\selectfont
