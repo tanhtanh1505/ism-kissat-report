@@ -12,6 +12,6 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces Example of a dataset of transactions after convert}}{12}{table.caption.20}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Characteristics of the considered datasets}}{20}{table.caption.22}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Comparison of the number of variables, clauses, solutions, and time taken to find all solutions using the sequential encounter encoding and the standard encoding}}{25}{table.caption.26}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Comparison of the number of variables, clauses, solutions, and time taken using the sequential encounter encoding and the standard encoding}}{27}{table.caption.27}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Characteristics of the considered datasets}}{23}{table.caption.22}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Comparison of the number of variables, clauses, solutions, and time taken to find all solutions using the sequential encounter encoding and the standard encoding}}{28}{table.caption.26}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Comparison of the number of variables, clauses, solutions, and time taken using the sequential encounter encoding and the standard encoding}}{30}{table.caption.27}%

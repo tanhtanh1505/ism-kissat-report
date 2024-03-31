@@ -8,8 +8,8 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 
-\title{Demo Document}
-\author{PQH}
+\title{Document}
+\author{LTA}
 
 
 \definecolor{gray75}{gray}{0.75}
@@ -71,8 +71,6 @@ linkbordercolor = {white}
 \MakePerPage{footnote}
 \usepackage{longtable}
 \usepackage{sectsty}
-% \usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
-% \addbibresource{reference.bib}
 % format titile chapter section ...
 \titleformat{\chapter}[display]
 {\large}
@@ -84,6 +82,8 @@ linkbordercolor = {white}
 \titleformat*{\section}{\normalfont \Large}
 \titleformat*{\subsection}{\normalfont \large}
 
+\usepackage{biblatex}
+\addbibresource{reference.bib}
 
 \begin{document}
 
@@ -120,11 +120,14 @@ linkbordercolor = {white}
 \input{chapter4/chap4_sec1}
 \input{chapter4/chap4_sec2}
 
-\chapter*{Conclusions}
-\addcontentsline{toc}{chapter}{Conclusions}
+\chapter*{Conclusions and Future Work}
+\addcontentsline{toc}{chapter}{Conclusions and Future Work}
 \input{chapter5/chap5_sec1}
+\input{chapter5/chap5_sec2}
 
+\chapter*{Reference}
+\addcontentsline{toc}{chapter}{Reference}
+\nocite{*}
+\printbibliography
 
-% \printbibliography
-\bibliography{reference}
 \end{document}
