@@ -12,6 +12,8 @@ The practical aim here is to pinpoint those itemsets that reach or surpass a pre
 For example, with a dataset of transactions from a retail store
 \begin{table}[H]
     \centering
+    \caption{Example of a dataset of transactions}
+    \label{tab:example_dataset_in_real}
     \begin{tabular}{|c|l|}
         \hline
         \textbf{Tid} & \textbf{Itemsets}     \\
@@ -23,8 +25,6 @@ For example, with a dataset of transactions from a retail store
         5            & apple, mango, cherry  \\
         \hline
     \end{tabular}
-    \caption{Example of a dataset of transactions}
-    \label{tab:example_dataset_in_real}
 \end{table}
 
 With minimum support is 3, we need to find all itemsets appearing in at least 3 transactions and return the following result:

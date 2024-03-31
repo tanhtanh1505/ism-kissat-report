@@ -1,4 +1,4 @@
-\documentclass[14pt,a4paper]{report}
+\documentclass[13pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 % \usepackage[vietnamese=nohyphenation]{hyphsubst}
 % \usepackage[vietnamese]{babel}
@@ -33,21 +33,6 @@ linkbordercolor = {white}
 \usepackage{lmodern}
 \usepackage[font=large,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 
-% % abbreviation
-% \usepackage{nomencl}
-% \makenomenclature
-% \renewcommand{\nomname}{ABBREVIATIONS}
-% %% This code creates the groups
-% % -----------------------------------------
-% \usepackage{etoolbox}
-% \renewcommand\nomgroup[1]{%
-%   \item[\bfseries
-%   \ifstrequal{#1}{S}{Symbols}{%
-%     \ifstrequal{#1}{A}{Abbreviations}{}}%
-%   ]}
-% % ------
-
-
 \usepackage{subcaption}
 \usepackage{bm}
 \usepackage[para]{footmisc}
@@ -58,7 +43,6 @@ linkbordercolor = {white}
 \usepackage{pdfpages}
 \usepackage{xspace}
 \usepackage{multirow}
-% \usepackage{subfiles}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -66,7 +50,6 @@ linkbordercolor = {white}
 
 \usetikzlibrary{calc}
 \usepackage{frontespizio}
-% \usepackage[perpage]{footmisc}
 \usepackage{perpage}
 \MakePerPage{footnote}
 \usepackage{longtable}
@@ -120,8 +103,7 @@ linkbordercolor = {white}
 \input{chapter4/chap4_sec1}
 \input{chapter4/chap4_sec2}
 
-\chapter*{Conclusions and Future Work}
-\addcontentsline{toc}{chapter}{Conclusions and Future Work}
+\chapter{Conclusions}
 \input{chapter5/chap5_sec1}
 \input{chapter5/chap5_sec2}
 

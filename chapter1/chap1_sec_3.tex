@@ -15,6 +15,8 @@ is true when P is false.
 Truth table:
 \begin{table}[H]
     \centering
+    \caption{Truth table of negation (NOT)}
+    \label{tab:truth_table_negation}v
     \begin{tabular}{|c|c|}
         \hline
         P & $\lnot$ P \\
@@ -23,8 +25,6 @@ Truth table:
         F & T         \\
         \hline
     \end{tabular}
-    \caption{Truth table of negation (NOT)}
-    \label{tab:truth_table_negation}
 \end{table}
 
 \textbf{Conjunction}
@@ -35,6 +35,8 @@ $\land$ Q. The conjunction is true only when both P and Q are true.
 Truth table:
 \begin{table}[H]
     \centering
+    \caption{Truth table of conjunction (AND)}
+    \label{tab:truth_table_conjunction}
     \begin{tabular}{|c|c|c|}
         \hline
         P & Q & P $\land$ Q \\
@@ -45,8 +47,6 @@ Truth table:
         F & F & F           \\
         \hline
     \end{tabular}
-    \caption{Truth table of conjunction (AND)}
-    \label{tab:truth_table_conjunction}
 \end{table}
 
 \textbf{Disjunction}
@@ -57,6 +57,8 @@ The disjunction is true when at least one of P and Q is true.
 Truth table:
 \begin{table}[H]
     \centering
+    \caption{Truth table of disjunction (OR)}
+    \label{tab:truth_table_disjunction}
     \begin{tabular}{|c|c|c|}
         \hline
         P & Q & P $\lor$ Q \\
@@ -67,8 +69,6 @@ Truth table:
         F & F & F          \\
         \hline
     \end{tabular}
-    \caption{Truth table of disjunction (OR)}
-    \label{tab:truth_table_disjunction}
 \end{table}
 
 \textbf{Implication}
@@ -79,6 +79,8 @@ The implication is false only when P is true and Q is false.
 Truth table:
 \begin{table}[H]
     \centering
+    \caption{Truth table of implication}
+    \label{tab:truth_table_implication}
     \begin{tabular}{|c|c|c|}
         \hline
         P & Q & P $\rightarrow$ Q \\
@@ -89,8 +91,6 @@ Truth table:
         F & F & T                 \\
         \hline
     \end{tabular}
-    \caption{Truth table of implication}
-    \label{tab:truth_table_implication}
 \end{table}
 
 \textbf{Biconditional}
@@ -101,6 +101,8 @@ The biconditional is true when both P and Q have the same truth value.
 Truth table:
 \begin{table}[H]
     \centering
+    \caption{Truth table of biconditional}
+    \label{tab:truth_table_biconditional}
     \begin{tabular}{|c|c|c|}
         \hline
         P & Q & P $\leftrightarrow$ Q \\
@@ -111,8 +113,6 @@ Truth table:
         F & F & T                     \\
         \hline
     \end{tabular}
-    \caption{Truth table of biconditional}
-    \label{tab:truth_table_biconditional}
 \end{table}
 
 \subsection{Conjunction Normal Form (CNF)}
@@ -126,6 +126,8 @@ The standard form of CNF is
 Sample truth table (only for P and Q and R):
 \begin{table}[H]
     \centering
+    \caption{Truth table of CNF}
+    \label{tab:truth_table_cnf}
     \begin{tabular}{|c|c|c|c|}
         \hline
         P & Q & R & (P $\land$ Q) $\land$ R \\
@@ -140,8 +142,6 @@ Sample truth table (only for P and Q and R):
         F & F & F & F                       \\
         \hline
     \end{tabular}
-    \caption{Truth table of CNF}
-    \label{tab:truth_table_cnf}
 \end{table}
 
 \subsection{Technical background of Itemset Mining}
@@ -163,6 +163,8 @@ Then we have database transactions in binary format as shown in table \ref{tab:e
 
 \begin{table}[H]
     \centering
+    \caption{Sample dataset of transactions in binary format}
+    \label{tab:example_dataset_convert_to_binary}
     \begin{tabular}{|c| c c c c |}
         \hline
         \textbf{Tid} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} \\
@@ -174,8 +176,6 @@ Then we have database transactions in binary format as shown in table \ref{tab:e
         5            & 1          & 0          & 1          & 1          \\
         \hline
     \end{tabular}
-    \caption{Sample dataset of transactions in binary format}
-    \label{tab:example_dataset_convert_to_binary}
 \end{table}
 
 \begin{itemize}
