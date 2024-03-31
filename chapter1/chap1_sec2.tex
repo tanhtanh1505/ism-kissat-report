@@ -4,7 +4,7 @@ The concept of SAT, also known as the Boolean Satisfiability problem,
 is a computer science problem aimed at determining the satisfiability of a propositional logic formula.
 
 \begin{flushleft}
-    \textbf{Input}: A propositional logic formula, typically represented in Conjunctive Normal Form (CNF).
+    \textbf{Input}: A propositional logic formula, typically represented in Conjunctive Normal Form\cite{cnf} (CNF).
 \end{flushleft}
 
 \begin{flushleft}
@@ -20,7 +20,7 @@ is a computer science problem aimed at determining the satisfiability of a propo
 \subsection{Encoding}
 SAT Encoding is a method in which certain problems can be solved by transforming
 them into SAT problems: representing problems using propositional logic formulas and
-applying SAT Solvers to solve these propositional logic formulas.
+applying SAT Solvers to solve these propositional logic formulas\cite{pham_ngoc_anh}.
 
 \begin{figure}
     \centering
@@ -32,7 +32,7 @@ applying SAT Solvers to solve these propositional logic formulas.
 A problem solved using SAT Encoding follows the following steps: First, identify the
 input data or the problem's input that needs to be solved. The Encoding module then
 takes this input data, defines the rules, and encodes these rules into Conjunctive Normal
-Form (CNF) logical formulas, producing an output file containing the number of
+Form\cite{cnf} (CNF) logical formulas, producing an output file containing the number of
 variables, the number of clauses, and the CNF formulas. The SAT Solver takes the
 output file from the Encoding module as input, processes the expressions, and generates
 the output result. The output result can be SAT if the SAT Solver finds a dataset
@@ -44,16 +44,16 @@ in the corresponding answer for the input data.
 \subsection{SAT Solvers}
 SAT Solver is a tool designed to solve the Boolean Satisfiability (SAT) problem,
 determining whether a propositional logic formula is satisfiable or not. It utilizes CNF
-(Conjunctive Normal Form) formulas.
+(Conjunctive Normal Form\cite{cnf}) formulas.
 
 In the SAT problem, we are given n Boolean variables and m clauses, where each clause
 is the disjunction of a set of literals, and a literal is a variable or its negation. The aim is
 to decide whether there is an interpretation of the variables that satisfies all clauses.
 Currently, numerous SAT- tools can efficiently handle a large number of clauses and
-variables, providing optimal results. Examples include Minisat [2], Lingeling [3],
-Glucose [4], RSat [5].
+variables, providing optimal results. Examples include Minisat\cite{minisat}, Lingeling\cite{lingeling},
+Glucose\cite{glucose}, RSat\cite{rsat}.
 
-SAT is proven to be NP-complete, meaning it has exponential time complexity in the
+SAT is proven to be NP-complete\cite{SATNPComplete}, meaning it has exponential time complexity in the
 worst case scenario. Despite this, effective and scalable algorithms for SAT have been
 developed in the 2000s, significantly advancing the automatic resolution of problems
 with tens of thousands of variables and millions of clauses [6]. One such algorithm used
@@ -64,7 +64,7 @@ Modern SAT-solving methods introduced in the 2000s have incorporated the Conflic
 Driven Clause Learning (CDCL) algorithm alongside DPLL, enhancing the efficiency
 of SAT Solvers in various domains.
 
-Kissat is a "keep it simple and clean bare metal SAT solver" written in C.
+Kissat\cite{kissat_jku} is a "keep it simple and clean bare metal SAT solver" written in C.
 It is a port of CaDiCaL back to C with improved data structures, better scheduling of inprocessing and optimized algorithms and implementation.
 The CNF file format used by Kissat consists of the following components:
 
