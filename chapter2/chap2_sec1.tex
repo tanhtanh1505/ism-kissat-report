@@ -21,6 +21,7 @@ Firstly, to capture all the transactions where the candidate itemset does not ap
     \label{eq:1}
     \bigwedge_{i=1}^{m} (q_i \leftrightarrow \bigwedge_{a \notin T_i} \neg p_a)
 \end{equation}
+
 This constraint guarantees that $q_i$ is true if and only if either all items not in $T_i$ are also not in the itemset $X$, or transaction $T_i$ contains the itemset $X$.
 
 Constraint \ref{eq:1} can be rewritten as follows:

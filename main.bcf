@@ -2376,7 +2376,8 @@
     <bcf:citekey order="13" intorder="1">carstensinz</bcf:citekey>
     <bcf:citekey order="14" intorder="1">FIMI</bcf:citekey>
     <bcf:citekey order="15" intorder="1">CP4IM</bcf:citekey>
-    <bcf:citekey order="16" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">constraint_programming</bcf:citekey>
+    <bcf:citekey order="17" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
