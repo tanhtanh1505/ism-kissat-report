@@ -1,0 +1,21 @@
+\section{Limitation of Standard Method}
+The standard method $C_{n-k+1}$ is a widely used approach to solve various problems, including itemset mining.
+However, its major drawback lies in the explosion of combinations,
+especially when $k$ approaches $n / 2 + 1$.
+
+In a simple example, with $n = 30$ and $\lambda = 16$,
+the number of clauses required to encode $C_{15}^{30}$ is approximately 155 million.
+In reality, $n$ corresponds to the number of transactions, which can range from thousands to millions.
+Therefore, the standard method is not feasible for large datasets.
+
+Moreover, solving problems using the standard method can be time-consuming and resource-intensive.
+The computational complexity increases exponentially with the size of the input.
+As a result, the standard method has limitations in handling large-scale datasets efficiently.
+
+Additionally, the standard method has a small limit on the size of the input it can handle.
+When the number of transactions or the dimensionality of the problem exceeds a certain threshold,
+the standard method becomes impractical and fails to provide accurate results.
+
+These limitations highlight the need for alternative approaches that can overcome
+the drawbacks of the standard method
+and efficiently handle large-scale datasets with complex problem structures.

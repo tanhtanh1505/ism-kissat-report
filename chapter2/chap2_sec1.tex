@@ -1,53 +1,170 @@
-In this chapter, we provide a detailed walkthrough of encoding the itemset mining problem into a SAT problem.
-We begin by establishing variable conventions and introducing constraints, gradually transitioning to converting these constraints into Conjunctive Normal Form (CNF) using the standard method.
-Along the way, we discuss the limitations of the standard method, particularly in handling large datasets or high support thresholds.
-Our goal is to equip readers with a clear understanding of the SAT encoding process for itemset mining and the challenges it entails.
+\section{Technical background}
+\subsection{Propositional Expression}
+Propositional logic formulas or propositional expressions are constructed from variables
+and logical operators AND (conjunction), OR (disjunction), NOT (negation), and
+parentheses.
 
-\section{Base constraints}
-To resolve the itemset mining problem, we using the SAT encoding approach\cite{ISM_SATAPPROACH}.
-In essence, SAT encoding involves the creation of variables and the imposition of constraints to represent the itemset mining problem.
-These variables serve to denote the presence or absence of items within a candidate itemset and are subjected to linear inequalities to ensure the itemset's support.
+\textbf{Proposition}: Each statement that can be either true or false is called a proposition,
+denoted by letters such as P, Q, R, ...
 
-In the context of a transaction database $D$ = {(1,$T_1$),...,(m,$T_m$)} and a minimum support threshold $\lambda$,
-each item in the candidate itemset $X$, we denote:
+\textbf{Negation}
+
+The negation (NOT) of a proposition P is denoted by $\lnot$ P. The negation
+is true when P is false.
+
+Truth table:
+\begin{table}[H]
+    \centering
+    \caption{Truth table of negation (NOT)}
+    \label{tab:truth_table_negation}v
+    \begin{tabular}{|c|c|}
+        \hline
+        P & $\lnot$ P \\
+        \hline
+        T & F         \\
+        F & T         \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\textbf{Conjunction}
+
+The conjunction (AND) of two propositions P and Q is denoted by P
+$\land$ Q. The conjunction is true only when both P and Q are true.
+
+Truth table:
+\begin{table}[H]
+    \centering
+    \caption{Truth table of conjunction (AND)}
+    \label{tab:truth_table_conjunction}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        P & Q & P $\land$ Q \\
+        \hline
+        T & T & T           \\
+        T & F & F           \\
+        F & T & F           \\
+        F & F & F           \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\textbf{Disjunction}
+
+The disjunction (OR) of two propositions P and Q is denoted by P $\lor$ Q.
+The disjunction is true when at least one of P and Q is true.
+
+Truth table:
+\begin{table}[H]
+    \centering
+    \caption{Truth table of disjunction (OR)}
+    \label{tab:truth_table_disjunction}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        P & Q & P $\lor$ Q \\
+        \hline
+        T & T & T          \\
+        T & F & T          \\
+        F & T & T          \\
+        F & F & F          \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\textbf{Implication}
+
+The implication of two propositions P and Q is denoted by P $\rightarrow$ Q.
+The implication is false only when P is true and Q is false.
+
+Truth table:
+\begin{table}[H]
+    \centering
+    \caption{Truth table of implication}
+    \label{tab:truth_table_implication}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        P & Q & P $\rightarrow$ Q \\
+        \hline
+        T & T & T                 \\
+        T & F & F                 \\
+        F & T & T                 \\
+        F & F & T                 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\textbf{Biconditional}
+
+The biconditional of two propositions P and Q is denoted by P $\leftrightarrow$ Q.
+The biconditional is true when both P and Q have the same truth value.
+
+Truth table:
+\begin{table}[H]
+    \centering
+    \caption{Truth table of biconditional}
+    \label{tab:truth_table_biconditional}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        P & Q & P $\leftrightarrow$ Q \\
+        \hline
+        T & T & T                     \\
+        T & F & F                     \\
+        F & T & F                     \\
+        F & F & T                     \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Conjunction Normal Form (CNF)}
+
+A propositional formula is in conjunctive normal form (CNF) if it is a conjunction of clauses, where each clause is a disjunction of literals. A literal is a propositional variable or its negation.
+The standard form of CNF is
+\begin{equation*}
+    (P_1 \lor P_2 \lor ... \lor P_n)_1 \land ... \land (Q_1 \lor Q_2 \lor ... \lor Q_m)_p \quad n,m,p \geq 1
+\end{equation*}
+
+Sample truth table (only for P and Q and R):
+\begin{table}[H]
+    \centering
+    \caption{Truth table of CNF}
+    \label{tab:truth_table_cnf}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        P & Q & R & (P $\land$ Q) $\land$ R \\
+        \hline
+        T & T & T & T                       \\
+        T & T & F & F                       \\
+        T & F & T & F                       \\
+        T & F & F & F                       \\
+        F & T & T & F                       \\
+        F & T & F & F                       \\
+        F & F & T & F                       \\
+        F & F & F & F                       \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Technical background of Itemset Mining}
+Firstly, we establish several symbols to represent the itemset mining problem.
+These symbols aid in formalizing the problem and defining key concepts.
+For instance, we denote:
 \begin{itemize}
-    \item $p_a$: is $true$ if the item $a$ is in the itemset $X$, otherwise $p_a = false$
-    \item $q_i$: is $true$ if the transaction $T_i$ contains the itemset $X$, otherwise $q_i = false$
+    \item \textbf{$\Omega$}: a set of all items
+    \item \textbf{$I$}: an itemset in $\Omega$, where $I \subseteq \Omega$
+    \item \textbf{$T_i$}: a transaction identifier. For $T_i$ = $(i,I)$
+    \item \textbf{$D$}: a transaction database, where $D$ contains a set of transactions, $D = \{T_1, T_2, ..., T_n\}$
+    \item \textbf{$Supp(I, D)$}: the support of itemset $I$ in database $D$, where $Supp(I, D)$ is the number of transactions in $D$ that contain $I$
 \end{itemize}
-Alongside, a set of constraints is imposed on these variables to establish a one-to-one correspondence between the models of the resulting CNF formula and the set of itemsets.
+For example, in table \ref{tab:example_dataset_in_real},
+we can present the dataset as a transaction database $D$.
 
-Firstly, to capture all the transactions where the candidate itemset does not appear, we use following constraint:
-\begin{equation}
-    \label{eq:1}
-    \bigwedge_{i=1}^{m} (q_i \leftrightarrow \bigwedge_{a \notin T_i} \neg p_a)
-\end{equation}
-
-This constraint guarantees that $q_i$ is true if and only if either all items not in $T_i$ are also not in the itemset $X$, or transaction $T_i$ contains the itemset $X$.
-
-Constraint \ref{eq:1} can be rewritten as follows:
-\begin{equation}
-    \label{eq:2}
-    \bigwedge_{a \in \Omega} \bigwedge_{a \notin T_i} (\neg p_a \vee \neg q_i)
-\end{equation}
-\begin{equation}
-    \label{eq:3}
-    \bigwedge_{T_i \in D} ((\bigvee_{a \notin T_i} p_a) \vee q_i)
-\end{equation}
-
-
-Finally, the frequency constraint, can be simply expressed as follows:
-\begin{equation}
-    \label{eq:4}
-    \sum_{i=1}^{m} q_i \geq \lambda
-\end{equation}
-
-For example, with a dataset of transactions from a retail store in table \ref{tab:example_dataset_in_real}, we mark:
-a = apple, b = banana, c = cherry, d = mango. Then we have database transactions
+Let $a = apple, b = banana, c = cherry, d = mango$.
+Then we have database transactions in binary format as shown in table \ref{tab:example_dataset_convert_to_binary}.
 
 \begin{table}[H]
     \centering
-    \caption{Example of a dataset of transactions after convert}
-    \label{tab:example_dataset_after_convert}
+    \caption{Sample dataset of transactions in binary format}
+    \label{tab:example_dataset_convert_to_binary}
     \begin{tabular}{|c| c c c c |}
         \hline
         \textbf{Tid} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} \\
@@ -61,16 +178,18 @@ a = apple, b = banana, c = cherry, d = mango. Then we have database transactions
     \end{tabular}
 \end{table}
 
-The itemset mining problem will be defined as:
-\begin{equation*}
-    \begin{aligned}
-         & q_1 \leftrightarrow (\neg p_d                ) \\
-         & q_2 \leftrightarrow (\neg p_b \wedge \neg p_c) \\
-         & q_3 \leftrightarrow (\neg p_b \wedge \neg p_d) \\
-         & q_4 \leftrightarrow (\neg p_a \wedge \neg p_d) \\
-         & q_5 \leftrightarrow (\neg p_b                ) \\
-         & q_1 + q_2 + q_3 + q_4 + q_5 \geq \lambda
-    \end{aligned}
-\end{equation*}
+\begin{itemize}
+    \item $\Omega$ is \{apple, banana, cherry, mango\}
+    \item $I$ can be \{apple\}, \{apple, mango\}, \{apple, mango, cherry\}, ...
+    \item $D$ = \{(1, \{apple, banana, cherry\}), (2, \{apple, mango\}), (3, \{apple, cherry\}), (4, \{mango, cherry\}), (5, \{apple, mango, cherry\})\}
+    \item $T_1$ = (1, \{apple, banana, cherry\}), $T_2$ = (2, \{apple, mango\}), $T_3$ = (3, \{apple, cherry\}),...
+    \item $Supp(\{apple, cherry\}, D)$ = 3, $Supp(\{apple\}, D)$ = 4,...
+\end{itemize}
+Let $\lambda$ be the minimum support threshold,
+the frequent itemset mining problem is to find all itemsets $I$ such that $Supp(I, D) \geq minsup$. In general, it can present by:
 
-In the next step, we must encode constraint \ref{eq:4} into CNF formula.
+\begin{center}
+    $FIM(D,\lambda)$ = \{I $\subseteq \Omega$ $|$ $Supp(I, D) \geq \lambda$\}
+\end{center}
+
+One of the major challenges in itemset mining is the potential exponential growth of the output, even when using condensed representations of patterns.

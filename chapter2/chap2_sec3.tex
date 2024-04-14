@@ -1,21 +1,76 @@
-\section{Limitation of Standard Method}
-The standard method $C_{n-k+1}$ is a widely used approach to solve various problems, including itemset mining.
-However, its major drawback lies in the explosion of combinations,
-especially when $k$ approaches $n / 2 + 1$.
+In this chapter, we provide a detailed walkthrough of encoding the itemset mining problem into a SAT problem.
+We begin by establishing variable conventions and introducing constraints, gradually transitioning to converting these constraints into Conjunctive Normal Form (CNF) using the standard method.
+Along the way, we discuss the limitations of the standard method, particularly in handling large datasets or high support thresholds.
+Our goal is to equip readers with a clear understanding of the SAT encoding process for itemset mining and the challenges it entails.
 
-In a simple example, with $n = 30$ and $\lambda = 16$,
-the number of clauses required to encode $C_{15}^{30}$ is approximately 155 million.
-In reality, $n$ corresponds to the number of transactions, which can range from thousands to millions.
-Therefore, the standard method is not feasible for large datasets.
+\section{Base constraints}
+To resolve the itemset mining problem, we using the SAT encoding approach\cite{ISM_SATAPPROACH}.
+In essence, SAT encoding involves the creation of variables and the imposition of constraints to represent the itemset mining problem.
+These variables serve to denote the presence or absence of items within a candidate itemset and are subjected to linear inequalities to ensure the itemset's support.
 
-Moreover, solving problems using the standard method can be time-consuming and resource-intensive.
-The computational complexity increases exponentially with the size of the input.
-As a result, the standard method has limitations in handling large-scale datasets efficiently.
+In the context of a transaction database $D$ = {(1,$T_1$),...,(m,$T_m$)} and a minimum support threshold $\lambda$,
+each item in the candidate itemset $X$, we denote:
+\begin{itemize}
+    \item $p_a$: is $true$ if the item $a$ is in the itemset $X$, otherwise $p_a = false$
+    \item $q_i$: is $true$ if the transaction $T_i$ contains the itemset $X$, otherwise $q_i = false$
+\end{itemize}
+Alongside, a set of constraints is imposed on these variables to establish a one-to-one correspondence between the models of the resulting CNF formula and the set of itemsets.
 
-Additionally, the standard method has a small limit on the size of the input it can handle.
-When the number of transactions or the dimensionality of the problem exceeds a certain threshold,
-the standard method becomes impractical and fails to provide accurate results.
+Firstly, to capture all the transactions where the candidate itemset does not appear, we use following constraint:
+\begin{equation}
+    \label{eq:1}
+    \bigwedge_{i=1}^{m} (q_i \leftrightarrow \bigwedge_{a \notin T_i} \neg p_a)
+\end{equation}
 
-These limitations highlight the need for alternative approaches that can overcome
-the drawbacks of the standard method
-and efficiently handle large-scale datasets with complex problem structures.
+This constraint guarantees that $q_i$ is true if and only if either all items not in $T_i$ are also not in the itemset $X$, or transaction $T_i$ contains the itemset $X$.
+
+Constraint \ref{eq:1} can be rewritten as follows:
+\begin{equation}
+    \label{eq:2}
+    \bigwedge_{a \in \Omega} \bigwedge_{a \notin T_i} (\neg p_a \vee \neg q_i)
+\end{equation}
+\begin{equation}
+    \label{eq:3}
+    \bigwedge_{T_i \in D} ((\bigvee_{a \notin T_i} p_a) \vee q_i)
+\end{equation}
+
+
+Finally, the frequency constraint, can be simply expressed as follows:
+\begin{equation}
+    \label{eq:4}
+    \sum_{i=1}^{m} q_i \geq \lambda
+\end{equation}
+
+For example, with a dataset of transactions from a retail store in table \ref{tab:example_dataset_in_real}, we mark:
+a = apple, b = banana, c = cherry, d = mango. Then we have database transactions
+
+\begin{table}[H]
+    \centering
+    \caption{Example of a dataset of transactions after convert}
+    \label{tab:example_dataset_after_convert}
+    \begin{tabular}{|c| c c c c |}
+        \hline
+        \textbf{Tid} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} \\
+        \hline
+        1            & 1          & 1          & 1          & 0          \\
+        2            & 1          & 0          & 0          & 1          \\
+        3            & 1          & 0          & 1          & 0          \\
+        4            & 0          & 0          & 1          & 1          \\
+        5            & 1          & 0          & 1          & 1          \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The itemset mining problem will be defined as:
+\begin{equation*}
+    \begin{aligned}
+         & q_1 \leftrightarrow (\neg p_d                ) \\
+         & q_2 \leftrightarrow (\neg p_b \wedge \neg p_c) \\
+         & q_3 \leftrightarrow (\neg p_b \wedge \neg p_d) \\
+         & q_4 \leftrightarrow (\neg p_a \wedge \neg p_d) \\
+         & q_5 \leftrightarrow (\neg p_b                ) \\
+         & q_1 + q_2 + q_3 + q_4 + q_5 \geq \lambda
+    \end{aligned}
+\end{equation*}
+
+In the next step, we must encode constraint \ref{eq:4} into CNF formula.

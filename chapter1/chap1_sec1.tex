@@ -1,53 +1,18 @@
 This chapter will focuses on introducing the itemset mining tasks and SAT encoding, encompassing their concepts, related terms, and applications.
-\section{Itemset Mining Tasks}
-\subsection{Overview}
-Frequent item sets are a key technique in the realm of data mining\cite{FIM_geeksforgeeks},
-specifically aimed at uncovering relationships among different items.
-The essence of association rule mining lies in identifying those item relationships that occur frequently together in the dataset.
+\section{Frequent Itemset Mining}
 
-In simpler terms, imagine a "frequent itemset" as a group of items that tend to show up in unison across various data entries. We utilize a specific measure called 'support count' to gauge the regularity of these itemset occurrences. The support count essentially quantifies the number of times a particular combination of items appears within the dataset's entries or transactions.
+Data mining is concerned with either forecasting future trends or deciphering past events. Techniques used for predicting the future, such as neural networks, often function as black-box models because the primary objective is to achieve the highest possible accuracy rather than explainability. On the other hand, various data mining methods aim to uncover patterns in data that are straightforward for humans to interpret.
 
-The practical aim here is to pinpoint those itemsets that reach or surpass a predetermined threshold of occurrence, known as the minimum support. By identifying these itemsets, we can infer patterns of frequency within the dataset's transactions or records.
+These methods of pattern discovery can be categorized based on the specific types of patterns they identify, including clusters, itemsets, trends, and outliers. For example, clusters group similar data points together, itemsets identify common associations or groupings in data, trends reveal changes or movements over time, and outliers pinpoint unusual or unexpected data points.
 
-For example, with a dataset of transactions from a retail store
-\begin{table}[H]
-    \centering
-    \caption{Example of a dataset of transactions}
-    \label{tab:example_dataset_in_real}
-    \begin{tabular}{|c|l|}
-        \hline
-        \textbf{Tid} & \textbf{Itemsets}     \\
-        \hline
-        1            & apple, banana, cherry \\
-        2            & apple, mango          \\
-        3            & apple, cherry         \\
-        4            & mango, cherry         \\
-        5            & apple, mango, cherry  \\
-        \hline
-    \end{tabular}
-\end{table}
+This paper provides a survey that focuses specifically on the discovery of itemsets within databases. Itemset discovery is a popular data mining task, especially when analyzing symbolic data, as it can provide valuable insights into associations and relationships within datasets.
 
-With minimum support is 3, we need to find all itemsets appearing in at least 3 transactions and return the following result:
+The concept of discovering itemsets in databases was introduced in 1993 by Agrawal and Srikant under the term large itemset mining, which is now known as frequent itemset mining (FIM). The objective of FIM is to identify groups of items (itemsets) that often occur together within customer transactions.
 
-\begin{itemize}
-    \item Itemset 1: \{apple, cherry\} in transactions [1, 3, 5]
-    \item Itemset 2: \{apple\} in transactions [1, 2, 3, 5]
+For example, analyzing a customer transaction database may reveal that many customers purchase taco shells along with peppers. Recognizing these associations between items helps to shed light on customer behavior. This knowledge can be invaluable for retail managers, as it enables them to make strategic marketing decisions such as promoting products together or positioning them closer on store shelves. Such strategies can lead to enhanced customer experiences and potentially increased sales.
 
-\end{itemize}
+Frequent itemset mining (FIM) was initially proposed as a method for analyzing customer transaction data, but it has since evolved into a general data mining task that is applicable across various domains. In broader terms, a customer transaction database can be seen as a collection of instances representing objects (transactions), with each object characterized by nominal attribute values (items). As such, FIM can also be understood as the process of identifying attribute values that commonly occur together in a database.
 
-\subsection{Applications}
-Frequent itemset mining is a powerful analytic process used to examine the relationships between items in large datasets. Taking a practical example from the commercial realm, let's picture a supermarket setting.
+Given that many data types can be represented in the form of transaction databases, FIM finds applications across a diverse range of fields. These include bioinformatics, image classification, network traffic analysis, customer review analysis, activity monitoring, malware detection, and e-learning, among others.
 
-Through the lens of frequent itemset mining, a supermarket can sift through transactional data to identify combinations of items that customers tend to purchase together regularly. This type of analysis digs deeper than observing mere coincidental purchases; it uncovers patterns that reflect a certain predictability and frequency in customer buying behavior.
-
-For example, a pattern where bread and milk are often purchased together reflects a habitual buying behavior rather than a sporadic trend. These insights are invaluable for retailers, as they allow them to make informed decisions across various aspects of their operations.
-
-Here's how these insights translate into real-world advantages:
-
-Inventory Management: By understanding which itemsets are popular, retailers can better manage their inventory, ensuring that these items are always in stock and accessible to customers. This proactive approach helps avoid stock shortages and enhances the overall shopping experience.
-
-Recommendation Systems: Retailers can implement systems that use frequent itemset data to recommend additional products to customers. For instance, if a customer selects pasta, the system might suggest accompanying it with pasta sauce and grated cheese, based on observed buying patterns. This can lead to greater customer satisfaction and increased sales.
-
-Targeted Marketing: The knowledge of which items are often bought together allows retailers to tailor their marketing efforts. Promotions can be strategized to bundle popular itemsets, attracting customers and encouraging them to buy more.
-
-In essence, frequent itemset mining is a strategic tool in the business intelligence arsenal. It empowers businesses with deep insights into consumer purchasing trends, facilitating data-driven strategies that foster growth and enhance customer engagement.
+FIM has also been extended in numerous ways to cater to specific requirements and challenges within these domains. For example, extensions of FIM have been developed to discover rare patterns, correlated patterns, patterns in sequences and graphs, and patterns that yield high profit. These adaptations expand the applicability of FIM and demonstrate its versatility and relevance across different areas of data mining.
