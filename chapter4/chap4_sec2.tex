@@ -59,6 +59,32 @@ However, it's worth noting that while the number of variables may increase, this
     \label{fig:4_3}
 \end{figure}
 
+To further test the performance, we conducted additional experiments. First, we increased the number of transactions from 25 to 28 and compared the number of variables in the CNF encoding of the optimization problem using the sequential encounter encoding and the standard encoding. The results are shown in Figure \ref{fig:4_4}.
+
+Next, we kept the number of transactions constant and varied the minimum support from 0.3 to 0.6 (step 0.1). We then compared the number of variables in the CNF encoding using both encoding methods. The results are shown in Figure \ref{fig:4_5}.
+
+These additional tests provide a more comprehensive evaluation of the sequential encounter encoding method and the standard encoding method, allowing us to assess their performance under different scenarios.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{chapter4/image/n_trans_25.png}
+    \includegraphics[width=1\textwidth]{chapter4/image/n_trans_26.png}
+    \includegraphics[width=1\textwidth]{chapter4/image/n_trans_27.png}
+    \includegraphics[width=1\textwidth]{chapter4/image/n_trans_28.png}
+    \caption{Comparison of the number of variables in the CNF encoding of the optimization problem using the sequential encounter encoding and the standard encoding with other number transactions.}
+    \label{fig:4_4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{chapter4/image/min_supp_0.3.png}
+    \includegraphics[width=1\textwidth]{chapter4/image/min_supp_0.4.png}
+    \includegraphics[width=1\textwidth]{chapter4/image/min_supp_0.5.png}
+    \includegraphics[width=1\textwidth]{chapter4/image/min_supp_0.6.png}
+    \caption{Comparison of the number of variables in the CNF encoding of the optimization problem using the sequential encounter encoding and the standard encoding with other minsupp in the same number of transactions.}
+    \label{fig:4_5}
+\end{figure}
+
 This observation underscores the efficiency of the sequential encounter encoding method in striking a balance between the complexity of the problem and the computational resources required.
 Despite the slight increase in variables, the overall computational overhead remains substantially lower,
 making the sequential encounter encoding method a promising approach for tackling large-scale constraint satisfaction problems.

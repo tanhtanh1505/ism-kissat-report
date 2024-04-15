@@ -1,6 +1,6 @@
 \section{Related Works}
 Several efficient algorithms have been proposed for
-FIM. Some of the most famous are Apriori\cite{apriori}, FP-Growth\cite{fp_growth},...
+FIM. Some of the most famous are Apriori\cite{hegland}, FP-Growth\cite{fp_growth},...
 All of these algorithms have the same input and the same output. However, the difference is
 the strategies and data structures that these algorithms employ to discover frequent itemsets
 efficiently. More specifically, FIM algorithms differ in whether they use a depth-first or
@@ -32,7 +32,7 @@ Then, we can represent it:
 
 Most of the existing itemset mining algorithms can be described as either using a breadth-first
 search or a depth-first search. Assume that there are $m$ items in a database. A breadth-
-first search algorithm (also called a level-wise algorithm) such as Apriori\cite{apriori} explores the search
+first search algorithm (also called a level-wise algorithm) such as Apriori\cite{hegland} explores the search
 space of itemsets by first considering 1-itemsets, then 2-itemsets, 3-itemsets . . . , and lastly
 $m$-itemsets.
 
@@ -49,7 +49,7 @@ a Hasse diagram\footnote{A Hasse diagram draws an arrow from an itemset $X$ to a
 A breadth-first search algorithm will first consider 1-itemsets \{$a$\}, \{$b$\}, \{$c$\}, \{$d$\}. Then,
 it will generate 2-itemsets such as \{$a, b$\}, \{$a, c$\}, \{$a, d$\}, and then 3-itemsets, and so on, until it
 generates the itemset \{$a, b, c, d$\} containing all items. On the other hand, depth-first search
-algorithms such as FPGrowth, H-Mine and LCM start from each 1-itemset and then recursively try to append items to the current itemset to generate larger itemsets.
+algorithms such as FPGrowth\cite{fp_growth}, H-Mine\cite{h_mine} start from each 1-itemset and then recursively try to append items to the current itemset to generate larger itemsets.
 For example, in the running example, a typical depth-first search algorithm would explore itemsets in that
 order: \{$a$\}, \{$a, b$\}, \{$a, b, c$\}, \{$a, b, c, d$\}, \{$a, b, d$\},
 \{$a, c$\}, \{$a, c, d$\}, \{$a, d$\}, \{$b$\}, \{$b, c$\}, \{$b, c, d$\},
@@ -60,7 +60,7 @@ the whole search space of itemsets because the search space can be very large. T
 the search space, search space pruning techniques are used.
 
 \subsection{Apriori: an horizontal breadth-first search algorithm}
-Apriori\cite{apriori} is a well-known algorithm for mining frequent itemsets.
+Apriori\cite{hegland} is a well-known algorithm for mining frequent itemsets.
 It is the first FIM algorithm. Apriori takes a transaction database and the minsup
 threshold as input. Apriori uses a standard database representation, as shown in Table
 1, also called a horizontal database. The pseudocode of Apriori is given:
@@ -114,3 +114,103 @@ memory as it requires at any moment to keep in the worst case all $k$ and $k - 1
 in memory (for $k > 1$). In terms of complexity, a very detailed complexity analysis of the
 Apriori algorithm has been done by Hegland\cite{hegland}. Briefly, the time complexity is $O(m^2n)$,
 where $m$ is the number of distinct items and $n$ is the number of transactions.
+
+\subsection{Pattern-growth algorithms}
+To overcome the limitations of Apriori, a new class of algorithms called pattern-growth.
+The main idea of pattern-growth algorithms is to scan a database
+to find itemsets, and thus avoid generating candidates that do not appear in the database.
+Furthermore, to reduce the cost of scanning the database, pattern-growth algorithms have
+introduced the concept of projected database to reduce the size of databases as an algorithm
+explore larger itemsets with its depth-first search.
+
+\begin{algorithm}
+    \caption{A pattern-growth algorithm}
+    \label{alg:apriori}
+    \begin{algorithmic}[1]
+        \State \textbf{Input}: $D$: a horizontal transaction database, $minsup$: a user-specified threshold
+        \State \textbf{Output}: the set of frequent itemsets
+        \State Scan the database D to find the set Z of all frequent items in D;
+        \For {each item z in Z} do
+        \State Output $X \cup \{z\}$; \Comment{$X \cup \{z\}$ is a frequent itemset}
+        \State $D' = Projecttion(D, z)$; \Comment{Create the projected database of $X \cup \{z\}$}
+        \State $PatternGrowth(D, X \cup \{z\}, minsup);$ \Comment{Recursive call to extend $X \cup \{z\}$}
+        \EndFor
+    \end{algorithmic}
+\end{algorithm}
+The pseudocode of a typical pattern-growth algorithm is shown in Algorithm \ref{alg:apriori}.
+It takes as input a transaction database $D$, the empty set, and the $minsup$ threshold. Without loss
+of generality, assume that there exists a total order on items $\prec$ such as
+the lexicographical order (e.g., $a \prec b \prec c \prec d$). A pattern-growth algorithm explores the search space using
+a depth-first search by recursively appending items according to the $\prec$ order to frequent
+itemsets, to obtain larger frequent itemsets. At the beginning, a pattern-growth algorithm
+considers that the current itemset $X$ is the empty set. A pattern-growth algorithm scans the
+database $D$ to find the set $Z$ of all frequent items in $D$. Then for each such item $z$,
+the itemset $X \cup \{z\}$ is considered as a frequent itemset. Then, the pattern-growth
+procedure is called to perform a depth-first search to find larger frequent itemsets that are
+extensions of $X \cup \{z\}$ in same way. However, it can be observed that not all items
+in $D$ can be appended to $X \cup \{z\}$ to generate larger itemsets. In fact, the itemset
+$X \cup \{z\}$ may not even appear in all transactions of the database $D$.
+For this reason, a pattern-growth algorithm will create the projected database of the itemset
+$X \cup \{z\}$ and will use this database to perform the depth-first search.
+This will allows reducing the cost
+of scanning the database. After recursively performing the depth-first search for all items,
+the set of all frequent itemsets will have been output.
+
+Now, let's illustrate these steps in more details with an example. Assume that minsup =
+3. By scanning the database of Table \ref{tab:example_dataset_in_real_encode}, it can be found that the frequent 1-itemsets are
+$\{a\}$, $\{b\}$, $\{c\}$, $\{d\}$. The algorithm will first consider the item a to try to find larger frequent itemsets
+starting with the prefix $\{a\}$. The algorithm will thus build the projected database of Table \ref{tab:projected_database}
+The projected database of an item $i$ is defined as the set of transactions
+where $i$ appears, but where the item $i$ and items preceding $i$ according to the $\prec$ order are removed.
+Then, to find frequent itemsets starting with $\{a\}$ containing one more item,
+the algorithm will scan the projected database of $\{a\}$ and count the support of all items
+appearing in that database.
+\begin{table}
+    \centering
+    \caption{Projected database of itemset \{a\}}
+    \label{tab:projected_database}
+    \begin{tabular}{|c|l|}
+        \hline
+        \textbf{Tid} & \textbf{Itemsets} \\
+        \hline
+        1            & b, c              \\
+        2            & d                 \\
+        3            & c                 \\
+        5            & d, c              \\
+        \hline
+    \end{tabular}
+\end{table}
+
+For example, the support of items in the projected database
+of $\{a\}$ are: $\{b\}$: 1, $\{c\}$: 2, $\{d\}$: 2. This means that the support of the itemset $\{a, b\}$ is 1, the support of the itemset $\{a, c\}$ is 2, and the support of the itemset $\{a, d\}$ is 2. The algorithm will output the frequent itemsets $\{a, c\}$ and $\{a, d\}$.
+Then, the algorithm will recursively call the pattern-growth procedure to find larger frequent itemsets starting with $\{a, c\}$ and $\{a, d\}$.
+Thus, only the itemset $\{a, c\}$ is frequent (recall that we assume that minsup = 3 in the running example).
+Then the
+algorithm will pursue the depth-first search to find frequent itemsets starting with the prefix $\{a, c\}$.
+The algorithm will build the projected database of $\{a, c\}$ from the projected database
+of $\{a\}$. The projected database of $\{a, c\}$ is shown in Table \ref{tab:projected_database_a_c}.
+
+\begin{table}
+    \centering
+    \caption{Projected database of itemset \{a, c\}}
+    \label{tab:projected_database_a_c}
+    \begin{tabular}{|c|l|}
+        \hline
+        \textbf{Tid} & \textbf{Itemsets} \\
+        \hline
+        1            & b                 \\
+        5            & d                 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Then, the algorithm will scan the projected database of $\{a, c\}$ to find frequent items in that database. This process will
+continue until all frequent itemsets have been explored by the depth-first search.
+
+A major advantage of pattern-growth algorithms is that they only explore the frequent
+itemsets in the search space thus avoiding considering many itemsets not appearing in the
+database, or infrequent itemsets. Besides, the concept of projected database is also useful
+to reduce the cost of database scans. A common question about the concept of projected
+database is: is it costly to create all these copies of the original database? The answer is no if
+an optimization called pseudo-projection is used, which consists of implementing a projected
+database as a set of pointers on the original database.
