@@ -2361,24 +2361,30 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">reference.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">FIM_geeksforgeeks</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">survey_itemset_mining</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">cnf</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">pham_ngoc_anh</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">cnf</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">cnf</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">minisat</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">lingeling</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">glucose</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">rsat</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">SATNPComplete</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">kissat_jku</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">ISM_SATAPPROACH</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">carstensinz</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">FIMI</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">CP4IM</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">constraint_programming</bcf:citekey>
-    <bcf:citekey order="18" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">survey_itemset_mining</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">FIM_geeksforgeeks</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">survey_itemset_mining</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">apriori</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">fp_growth</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">apriori</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">apriori</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">hegland</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">cnf</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">pham_ngoc_anh</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">cnf</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">cnf</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">minisat</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">lingeling</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">glucose</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">rsat</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">SATNPComplete</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">kissat_jku</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">ISM_SATAPPROACH</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">carstensinz</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">FIMI</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">CP4IM</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">constraint_programming</bcf:citekey>
+    <bcf:citekey order="24" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

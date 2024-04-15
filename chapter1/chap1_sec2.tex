@@ -1,109 +1,116 @@
-\section{Concepts}
-Frequent item sets are a key technique in the realm of data mining\cite{FIM_geeksforgeeks},
-specifically aimed at uncovering relationships among different items.
-The essence of association rule mining lies in identifying those item relationships that occur frequently together in the dataset.
+\section{Related Works}
+Several efficient algorithms have been proposed for
+FIM. Some of the most famous are Apriori\cite{apriori}, FP-Growth\cite{fp_growth},...
+All of these algorithms have the same input and the same output. However, the difference is
+the strategies and data structures that these algorithms employ to discover frequent itemsets
+efficiently. More specifically, FIM algorithms differ in whether they use a depth-first or
+breadth-first search, the type of database representation that they use internally or
+externally, how they generate or determine the next itemsets to be explored in the search
+space, and how they count the support of itemsets to determine if they satisfy the
+minimum support constraint.
 
-In simpler terms, imagine a "frequent itemset" as a group of items that tend to show up in unison across various data entries. We utilize a specific measure called 'support count' to gauge the regularity of these itemset occurrences. The support count essentially quantifies the number of times a particular combination of items appears within the dataset's entries or transactions.
-
-The practical aim here is to pinpoint those itemsets that reach or surpass a predetermined threshold of occurrence, known as the minimum support. By identifying these itemsets, we can infer patterns of frequency within the dataset's transactions or records.
-
+\subsection{Breadth-first search and depth-first search}
+First of all, we can use the letters $a, b, c,...$ to represent items in Table \ref{tab:example_dataset_in_real}.
+Where $apple$ is represented by $a$, $banana$ is represented by $b$, $cherry$ is represented by $c$ and $mango$ is represented by $d$.
+Then, we can represent it:
 \begin{table}[H]
     \centering
-    \caption{Example of a dataset of transactions from a retail store}
-    \label{tab:example_dataset_in_real}
+    \caption{Example of a dataset of transactions}
+    \label{tab:example_dataset_in_real_encode}
     \begin{tabular}{|c|l|}
         \hline
-        \textbf{Tid} & \textbf{Itemsets}     \\
+        \textbf{Tid} & \textbf{Itemsets} \\
         \hline
-        1            & apple, banana, cherry \\
-        2            & apple, mango          \\
-        3            & apple, cherry         \\
-        4            & mango, cherry         \\
-        5            & apple, mango, cherry  \\
+        1            & a, b, c           \\
+        2            & a, d              \\
+        3            & a, c              \\
+        4            & d, c              \\
+        5            & a, d, c           \\
         \hline
     \end{tabular}
 \end{table}
 
-In paper \cite{survey_itemset_mining}, the authors have provided a comprehensive survey of frequent itemset mining algorithms.
-The problem of frequent itemset mining is formally defined as follows.
-Let there be a set of items (symbols) $I = {i_1, i_2, . . . i_m}$.
-A transaction database $D = {T_1, T_2, . . ., T_n}$ is a set
-of transactions such that each transactions $T_q \subseteq I(1 \leq q \leq m)$ is a set of distinct items,
-and each transaction $T_q$ has a unique identifier q called its TID (Transaction IDentifier).
-For example, consider the transaction database shown in Table \ref{tab:example_dataset_in_real}.
-This database contains
-five transactions, represents items bought by customers.
-For example, the first transaction $T_1$ represents a customer that has bought the item apple, banana and cherry.
+Most of the existing itemset mining algorithms can be described as either using a breadth-first
+search or a depth-first search. Assume that there are $m$ items in a database. A breadth-
+first search algorithm (also called a level-wise algorithm) such as Apriori\cite{apriori} explores the search
+space of itemsets by first considering 1-itemsets, then 2-itemsets, 3-itemsets . . . , and lastly
+$m$-itemsets.
 
-An itemset $X$ is a set of items such that $X \subseteq I$. Let the notation $|X|$ denote the set
-cardinality or, in other words, the number of items in an itemset $X$. An itemset $X$ is said
-to be of length k or a k-itemset if it contains k items ($|X| = k$).
-The goal of itemset mining is to discover interesting itemsets in a transaction database,
-that is interesting associations between items.
-In general, in itemset mining, various measures can be used to assess the
-interestingness of patterns. In FIM, the interestingness of a given itemset is traditionally
-defined using a measure called the support. The support (or absolute support) of an itemset
-X in a database D is denoted as $Supp(X)$ and defined as the number of transactions containing
-X, that is $Supp(X) = |\{T|X \subseteq T \wedge T \in D\}|$.
-For example, the support of the itemset \{$apple, mango$\} is 2 because this itemset appears in two transactions ($T_2$ and $T_5$).
-Note that some authors prefer to define the support of an itemset $X$ as a ratio. This definition called the relative
-support is $RelSup(X) = Supp(X)/|D|$. For example, the relative support of the itemset \{$apple, mango$\}
-is 0.4.
+\begin{figure}
+    \caption{Search space of all possible itemsets for the running example}
+    \label{fig:search_space}
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapter1/image/space.png}
+\end{figure}
 
-The task of frequent itemset mining consists of discovering all frequent itemsets in a
-given transaction database. An itemset $X$ is frequent if it has a support that is no less than
-a given minimum support threshold minsup set by the user (i.e. $Supp(X) \geq minsup$). For
-example, if we consider the database shown in Table \ref{tab:example_dataset_in_real} and that the user has set $minsup$ = 2,
-the task of FIM is to discover all groups of items appearing in at least two transactions. In
-this case, there are exactly 6 frequent itemsets, where the number besides each itemset indicates
-its support:
-\begin{itemize}
-    \item \{apple\}: 4 (appears in transactions $T_1$, $T_2$, $T_3$ and $T_5$)
-    \item \{mango\}: 3 (appears in transactions $T_2$, $T_4$ and $T_5$)
-    \item \{cherry\}: 4 (appears in transactions $T_1$, $T_3$, $T_4$ and $T_5$)
-    \item \{apple, mango\}: 2 (appears in transactions $T_2$ and $T_5$)
-    \item \{apple, cherry\}: 3 (appears in transactions $T_1$, $T_3$ and $T_5$)
-    \item \{mango, cherry\}: 2 (appears in transactions $T_4$ and $T_5$)
-\end{itemize}
+For example, Figure \ref{fig:search_space} depicts the search space of all possible itemsets for the
+running example. In this figure, the search space is represented as
+a Hasse diagram\footnote{A Hasse diagram draws an arrow from an itemset $X$ to another itemset $Y$ if and only if $X \subseteq Y$ and $|X| + 1 = Y$.}
+A breadth-first search algorithm will first consider 1-itemsets \{$a$\}, \{$b$\}, \{$c$\}, \{$d$\}. Then,
+it will generate 2-itemsets such as \{$a, b$\}, \{$a, c$\}, \{$a, d$\}, and then 3-itemsets, and so on, until it
+generates the itemset \{$a, b, c, d$\} containing all items. On the other hand, depth-first search
+algorithms such as FPGrowth, H-Mine and LCM start from each 1-itemset and then recursively try to append items to the current itemset to generate larger itemsets.
+For example, in the running example, a typical depth-first search algorithm would explore itemsets in that
+order: \{$a$\}, \{$a, b$\}, \{$a, b, c$\}, \{$a, b, c, d$\}, \{$a, b, d$\},
+\{$a, c$\}, \{$a, c, d$\}, \{$a, d$\}, \{$b$\}, \{$b, c$\}, \{$b, c, d$\},
+\{$b, d$\}, \{$c$\}, \{$c, d$\}, \{$d$\}.
 
-\section{Applications}
-Frequent itemset mining is a powerful analytic process used to examine the relationships between items in large datasets. Taking a practical example from the commercial realm, let's picture a supermarket setting.
+To design an efficient FIM algorithm, it is important that the algorithm avoid exploring
+the whole search space of itemsets because the search space can be very large. To reduce
+the search space, search space pruning techniques are used.
 
-Through the lens of frequent itemset mining, a supermarket can sift through transactional data to identify combinations of items that customers tend to purchase together regularly. This type of analysis digs deeper than observing mere coincidental purchases; it uncovers patterns that reflect a certain predictability and frequency in customer buying behavior.
+\subsection{Apriori: an horizontal breadth-first search algorithm}
+Apriori\cite{apriori} is a well-known algorithm for mining frequent itemsets.
+It is the first FIM algorithm. Apriori takes a transaction database and the minsup
+threshold as input. Apriori uses a standard database representation, as shown in Table
+1, also called a horizontal database. The pseudocode of Apriori is given:
 
-For example, a pattern where bread and milk are often purchased together reflects a habitual buying behavior rather than a sporadic trend. These insights are invaluable for retailers, as they allow them to make informed decisions across various aspects of their operations.
+\begin{algorithm}
+    \caption{Apriori algorithm}
+    \begin{algorithmic}[1]
+        \State \textbf{Input}: $D$: a horizontal transaction database, $minsup$: a user-specified threshold
+        \State \textbf{Output}: the set of frequent itemsets
+        \State Scan the database to calculate the support of all items in I;
+        \State $F_1 = \{i | i \in I \wedge Supp(\{i\}) \ge minsup\}$; \Comment{Frequent 1-itemsets}
+        \State $k = 2$;
+        \While{$F_{k} \neq \emptyset$}
+        \State $C_k = \{i_1, i_2, ..., i_k | i_1 \in F_1, i_2 \in F_2, ..., i_k \in F_k\}$; \Comment{Generate candidate k-itemsets}
+        \State Remove each candidate $X \in C_k$ that contains a $(k-1)$ itemset not in $F_{k-1}$;
+        \State Scan the database to calculate the support of each candidate in $C_k$;
+        \State $F_k = \{X \in C_k | Supp(X) \ge minsup\}$; \Comment{Frequent k-itemsets}
+        \State $k = k + 1$;
+        \EndWhile
+        \State \textbf{return} $\bigcup_{k=1...k} F_k$;
+    \end{algorithmic}
+\end{algorithm}
 
-Here's how these insights translate into real-world advantages:
+Apriori first scans the database to calculate the support of each item, i.e. 1-itemset.
+Then, Apriori uses this information to identify the set of all frequent items, denoted as $F_1$.
+Then, Apriori performs a breadth-first search to find larger frequent itemsets.
+During the search, Apriori uses the frequent itemsets of a given length $k - 1$
+(denoted as $F_{k-1}$) to generate potentially frequent itemsets of length k (denoted as $C_k$). This
+is done by combining pairs of items of length k that share all but one item.
+For example, if the frequent 1-itemsets are {a}, {b}, {c}, Apriori will combine pairs of
+these itemsets to obtain the following candidate 2-itemsets: {a, b}, {a, c} and {b, c}.
+After generating candidates of length k, Apriori checks if the $(k - 1)$-subsets of
+each candidate are frequent. If a candidate itemset X has an infrequent $(k - 1)$-subset, $X$
+cannot be frequent (it would violate the downward-closure property) and it is thus removed
+from the set of candidate $k-itemsets$.
+Then, Apriori scans the database to calculate the
+support of all remaining candidate itemsets in $C_k$. Each candidate having a support
+not less than minsup is added to the set $F_k$ of frequent $k-itemsets$. This process
+is repeated until no candidates can be generated. The set of all frequent itemsets is then
+returned to the user.
 
-Inventory Management: By understanding which itemsets are popular, retailers can better manage their inventory, ensuring that these items are always in stock and accessible to customers. This proactive approach helps avoid stock shortages and enhances the overall shopping experience.
+Apriori is an important algorithm as it has inspired many other algorithms. However, it
+suffers from important limitations. The first one is that because Apriori generates candidates
+by combining itemsets without looking at the database, it can generate some patterns that
+do not even appear in the database. Thus, it can spend a huge amount of time processing
+candidates that do not exist in the database. The second limitation is that Apriori has to
+repeatedly scan the database to count the support of candidates, which is very costly.
 
-Recommendation Systems: Retailers can implement systems that use frequent itemset data to recommend additional products to customers. For instance, if a customer selects pasta, the system might suggest accompanying it with pasta sauce and grated cheese, based on observed buying patterns. This can lead to greater customer satisfaction and increased sales.
-
-Targeted Marketing: The knowledge of which items are often bought together allows retailers to tailor their marketing efforts. Promotions can be strategized to bundle popular itemsets, attracting customers and encouraging them to buy more.
-
-In essence, frequent itemset mining is a strategic tool in the business intelligence arsenal. It empowers businesses with deep insights into consumer purchasing trends, facilitating data-driven strategies that foster growth and enhance customer engagement.
-
-
-\section{Challenges}
-FIM is an enumeration problem. The goal is to enumerate all patterns that meet the
-minimum support constraint specified by the user. Thus, there is always a single correct
-answer to a FIM task. FIM is a difficult problem. The naive approach to solve this problem
-is to consider all possible itemsets to then output only those meeting the minimum support
-constraint specified by the user. However, such a naive approach is inefficient for the following
-reason. The number of possible itemsets grows exponentially with the number of items in the
-database.
-If there are $m$ distinct items in a transaction database, there are $2^m - 1$ possible itemsets.
-For example, if the database contains 1000 items, there are $2^{1000} - 1$ possible itemsets,
-which is clearly unmanageable using a naive approach. It is important
-to note that the FIM problem can be very difficult even for a small database. For example,
-a database containing a single transaction with 100 items, with $minsup$ = 1 still generates
-a search space of $2^{100}$ itemsets.
-
-Thus, the naive approach is not feasible for databases containing a large number of items.
-The number of itemsets in the search space generally matters more than the size of the data in FIM. But what influences the number of itemsets
-in the search space? The number of itemsets depends on how similar the transactions are in
-the database, and also on how low the $minsup$ threshold is set by the user.
-
-To discover frequent itemsets efficiently, it is thus necessary to design algorithms that
-avoid exploring the search space of all possible itemsets and that process each itemset in the
-search space as efficiently as possible.
+The third limitation is that the breadth-first search approach can be quite costly in terms of
+memory as it requires at any moment to keep in the worst case all $k$ and $k - 1$ itemsets
+in memory (for $k > 1$). In terms of complexity, a very detailed complexity analysis of the
+Apriori algorithm has been done by Hegland\cite{hegland}. Briefly, the time complexity is $O(m^2n)$,
+where $m$ is the number of distinct items and $n$ is the number of transactions.

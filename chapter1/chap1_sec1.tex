@@ -1,7 +1,7 @@
 This chapter will focuses on introducing the itemset mining tasks and SAT encoding, encompassing their concepts, related terms, and applications.
 \section{Frequent Itemset Mining}
 
-Data mining is concerned with either forecasting future trends or deciphering past events. Techniques used for predicting the future, such as neural networks, often function as black-box models because the primary objective is to achieve the highest possible accuracy rather than explainability. On the other hand, various data mining methods aim to uncover patterns in data that are straightforward for humans to interpret.
+Data mining\cite{survey_itemset_mining} is concerned with either forecasting future trends or deciphering past events. Techniques used for predicting the future, such as neural networks, often function as black-box models because the primary objective is to achieve the highest possible accuracy rather than explainability. On the other hand, various data mining methods aim to uncover patterns in data that are straightforward for humans to interpret.
 
 These methods of pattern discovery can be categorized based on the specific types of patterns they identify, including clusters, itemsets, trends, and outliers. For example, clusters group similar data points together, itemsets identify common associations or groupings in data, trends reveal changes or movements over time, and outliers pinpoint unusual or unexpected data points.
 
@@ -16,3 +16,113 @@ Frequent itemset mining (FIM) was initially proposed as a method for analyzing c
 Given that many data types can be represented in the form of transaction databases, FIM finds applications across a diverse range of fields. These include bioinformatics, image classification, network traffic analysis, customer review analysis, activity monitoring, malware detection, and e-learning, among others.
 
 FIM has also been extended in numerous ways to cater to specific requirements and challenges within these domains. For example, extensions of FIM have been developed to discover rare patterns, correlated patterns, patterns in sequences and graphs, and patterns that yield high profit. These adaptations expand the applicability of FIM and demonstrate its versatility and relevance across different areas of data mining.
+
+\subsection{Concepts}
+Frequent item sets are a key technique in the realm of data mining\cite{FIM_geeksforgeeks},
+specifically aimed at uncovering relationships among different items.
+The essence of association rule mining lies in identifying those item relationships that occur frequently together in the dataset.
+
+In simpler terms, imagine a "frequent itemset" as a group of items that tend to show up in unison across various data entries. We utilize a specific measure called 'support count' to gauge the regularity of these itemset occurrences. The support count essentially quantifies the number of times a particular combination of items appears within the dataset's entries or transactions.
+
+The practical aim here is to pinpoint those itemsets that reach or surpass a predetermined threshold of occurrence, known as the minimum support. By identifying these itemsets, we can infer patterns of frequency within the dataset's transactions or records.
+
+\begin{table}[H]
+    \centering
+    \caption{Example of a dataset of transactions from a retail store}
+    \label{tab:example_dataset_in_real}
+    \begin{tabular}{|c|l|}
+        \hline
+        \textbf{Tid} & \textbf{Itemsets}     \\
+        \hline
+        1            & apple, banana, cherry \\
+        2            & apple, mango          \\
+        3            & apple, cherry         \\
+        4            & mango, cherry         \\
+        5            & apple, mango, cherry  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+In paper \cite{survey_itemset_mining}, the authors have provided a comprehensive survey of frequent itemset mining algorithms.
+The problem of frequent itemset mining is formally defined as follows.
+Let there be a set of items (symbols) $I = {i_1, i_2, . . . i_m}$.
+A transaction database $D = {T_1, T_2, . . ., T_n}$ is a set
+of transactions such that each transactions $T_q \subseteq I(1 \leq q \leq m)$ is a set of distinct items,
+and each transaction $T_q$ has a unique identifier q called its TID (Transaction IDentifier).
+For example, consider the transaction database shown in Table \ref{tab:example_dataset_in_real}.
+This database contains
+five transactions, represents items bought by customers.
+For example, the first transaction $T_1$ represents a customer that has bought the item apple, banana and cherry.
+
+An itemset $X$ is a set of items such that $X \subseteq I$. Let the notation $|X|$ denote the set
+cardinality or, in other words, the number of items in an itemset $X$. An itemset $X$ is said
+to be of length k or a k-itemset if it contains k items ($|X| = k$).
+The goal of itemset mining is to discover interesting itemsets in a transaction database,
+that is interesting associations between items.
+In general, in itemset mining, various measures can be used to assess the
+interestingness of patterns. In FIM, the interestingness of a given itemset is traditionally
+defined using a measure called the support. The support (or absolute support) of an itemset
+X in a database D is denoted as $Supp(X)$ and defined as the number of transactions containing
+X, that is $Supp(X) = |\{T|X \subseteq T \wedge T \in D\}|$.
+For example, the support of the itemset \{$apple, mango$\} is 2 because this itemset appears in two transactions ($T_2$ and $T_5$).
+Note that some authors prefer to define the support of an itemset $X$ as a ratio. This definition called the relative
+support is $RelSup(X) = Supp(X)/|D|$. For example, the relative support of the itemset \{$apple, mango$\}
+is 0.4.
+
+The task of frequent itemset mining consists of discovering all frequent itemsets in a
+given transaction database. An itemset $X$ is frequent if it has a support that is no less than
+a given minimum support threshold minsup set by the user (i.e. $Supp(X) \geq minsup$). For
+example, if we consider the database shown in Table \ref{tab:example_dataset_in_real} and that the user has set $minsup$ = 2,
+the task of FIM is to discover all groups of items appearing in at least two transactions. In
+this case, there are exactly 6 frequent itemsets, where the number besides each itemset indicates
+its support:
+\begin{itemize}
+    \item \{apple\}: 4 (appears in transactions $T_1$, $T_2$, $T_3$ and $T_5$)
+    \item \{mango\}: 3 (appears in transactions $T_2$, $T_4$ and $T_5$)
+    \item \{cherry\}: 4 (appears in transactions $T_1$, $T_3$, $T_4$ and $T_5$)
+    \item \{apple, mango\}: 2 (appears in transactions $T_2$ and $T_5$)
+    \item \{apple, cherry\}: 3 (appears in transactions $T_1$, $T_3$ and $T_5$)
+    \item \{mango, cherry\}: 2 (appears in transactions $T_4$ and $T_5$)
+\end{itemize}
+
+\subsection{Applications}
+Frequent itemset mining is a powerful analytic process used to examine the relationships between items in large datasets. Taking a practical example from the commercial realm, let's picture a supermarket setting.
+
+Through the lens of frequent itemset mining, a supermarket can sift through transactional data to identify combinations of items that customers tend to purchase together regularly. This type of analysis digs deeper than observing mere coincidental purchases; it uncovers patterns that reflect a certain predictability and frequency in customer buying behavior.
+
+For example, a pattern where bread and milk are often purchased together reflects a habitual buying behavior rather than a sporadic trend. These insights are invaluable for retailers, as they allow them to make informed decisions across various aspects of their operations.
+
+Here's how these insights translate into real-world advantages:
+
+Inventory Management: By understanding which itemsets are popular, retailers can better manage their inventory, ensuring that these items are always in stock and accessible to customers. This proactive approach helps avoid stock shortages and enhances the overall shopping experience.
+
+Recommendation Systems: Retailers can implement systems that use frequent itemset data to recommend additional products to customers. For instance, if a customer selects pasta, the system might suggest accompanying it with pasta sauce and grated cheese, based on observed buying patterns. This can lead to greater customer satisfaction and increased sales.
+
+Targeted Marketing: The knowledge of which items are often bought together allows retailers to tailor their marketing efforts. Promotions can be strategized to bundle popular itemsets, attracting customers and encouraging them to buy more.
+
+In essence, frequent itemset mining is a strategic tool in the business intelligence arsenal. It empowers businesses with deep insights into consumer purchasing trends, facilitating data-driven strategies that foster growth and enhance customer engagement.
+
+
+\subsection{Challenges}
+FIM is an enumeration problem. The goal is to enumerate all patterns that meet the
+minimum support constraint specified by the user. Thus, there is always a single correct
+answer to a FIM task. FIM is a difficult problem. The naive approach to solve this problem
+is to consider all possible itemsets to then output only those meeting the minimum support
+constraint specified by the user. However, such a naive approach is inefficient for the following
+reason. The number of possible itemsets grows exponentially with the number of items in the
+database.
+If there are $m$ distinct items in a transaction database, there are $2^m - 1$ possible itemsets.
+For example, if the database contains 1000 items, there are $2^{1000} - 1$ possible itemsets,
+which is clearly unmanageable using a naive approach. It is important
+to note that the FIM problem can be very difficult even for a small database. For example,
+a database containing a single transaction with 100 items, with $minsup$ = 1 still generates
+a search space of $2^{100}$ itemsets.
+
+Thus, the naive approach is not feasible for databases containing a large number of items.
+The number of itemsets in the search space generally matters more than the size of the data in FIM. But what influences the number of itemsets
+in the search space? The number of itemsets depends on how similar the transactions are in
+the database, and also on how low the $minsup$ threshold is set by the user.
+
+To discover frequent itemsets efficiently, it is thus necessary to design algorithms that
+avoid exploring the search space of all possible itemsets and that process each itemset in the
+search space as efficiently as possible.
