@@ -1,36 +1,36 @@
-In this chapter, we will introduce a method to optimize CNF encodings, which is called Sequential Encounter Encoding (SEE).
-Base on the work of Carsten Sinz for problem 'At Most K',
-we will adapt the SEE method to solve the problem 'at least k' of itemset mining.
+In this chapter, we will introduce a method to optimize CNF encodings, which is called Sequential Counter Encoding (SC).
+Base on the work of Carsten Sinz for problem "at most k",
+we will adapt the SC methods to solve the problem "at least k" of itemset mining.
+SC methods are divided into two methods: Old Sequential Counter Encoding (OSC) and New Sequential Counter Encoding (NSC).
+Both methods are designed to solve the "at least k" problem with each method having its own strengths and weaknesses.
+When combined, they provide a comprehensive solution for addressing logical constraints in itemset mining.
 
-
-\section{Sequential Encounter Encoding}
+\section{Overview}
 
 In a paper published in 2005, Carsten Sinz\cite{carstensinz} presented a novel approach to encode constraints within the realm of CNF encodings,
-which he termed Sequential Encounter Encoding.
+which he termed Sequential Counter Encoding.
 This technique introduced a method to count occurrences of boolean variables,
 particularly useful for encoding problems where the number of true variables
 must not exceed a certain threshold $k$ in the series of variables $x_1, x_2, ..., x_n$.
 It is denote as $\le _k(x_1,...,x_n)$, where the goal is to ensure that at most $k$ of the variables $x_1, x_2,..., x_n$ are true.
 
-The approach is to encode a circuit that sequentially counts the number of $x_i$ that are true.
-For each $1 \le i \le n$, a register is introduced to store the count of $x_1, x_2,..., x_i$ that are true.
-Each register maintains its count in base one, using $k$ bits to count to $k$.
-Thus, the encoding introduces new variables $r_{ij}$, $1 \le i \le n$, $1 \le j \le k$, where each $r_{ij}$ represents the $j^{th}$ bit of register $i$.
-
-In section 2, we have encoded the problem of item set mining in terms of constraints \ref{eq:2}, \ref{eq:3} and \ref{eq:4}.
-With constraint \ref{eq:4}, we ensure that the number of transactions $q_i$ that contain the itemset $X$ is at least $\lambda$.
-
-Building on Sinz's foundational work, this paper adapts the SEE technique
-for an \textbf{'at least k'} problem context,
+Building on Sinz's foundational work, this paper adapts the SC technique
+for an 'at least k' problem context,
 applying it specifically to CNF encoding in itemset mining.
-Instead of ensuring that at most $k$ of the variables are true, the goal is to ensure that at least $k$ of the variables are true.
+Instead of ensuring that "at most k" of the variables are true, the goal is to ensure that at least $k$ of the variables are true.
 
 Within the scope of itemset mining, this means that each transaction $q_i$ is represented by a boolean variable,
 true if the transaction contains the itemset $X$ and false otherwise.
 The goal is to ensure that at least $\lambda$ (equivalent to $k$)
 of these transactions are true within a selected subset of transactions $q_1, q_2,..., q_n$.
 
-To approach this, each transaction is processed one by one, updating a register $r$ which holds the running true transactions up to that point.
-If $r_{ij}$ is true, it indicates that by the time the sequence reaches transaction $q_i$, there have been $j$ transactions from $q_1$ to $q_i$ are true.
+Expanding on the original work by Sinz, this paper introduces two methods of sequential counter encoding for the "at least k" problem in itemset mining.
+These methods are the old Sequential Counter Encoding (OSC) and the new Sequential Counter Encoding (NSC).
+Both methods complement each other and are designed to solve the ALK problem with range input.
+Each method has its own strengths and weaknesses, and together they provide a comprehensive solution for addressing logical constraints in itemset mining beyond the original AMK problems.
 
-In adapting Sinz's method for this new application, this paper sheds light on the potential versatility of Sequential Encounter Encoding in addressing a broader range of logical constraints, extending its utility beyond the original 'at most k' problems.
+The old Sequential Counter Encoding (OSC) is based on Sinz's original sequential counter encoding method for the AMK problem, but adapted to solve the ALK problem. In this method, we modify the constraints to ensure that at most $n-k$ variables are false, instead of at most $k$ variables being true.
+
+The new Sequential Counter Encoding (NSC) is a novel approach to sequential counter encoding specifically designed for the ALK problem. In this method, each transaction is processed one by one, and a register $r$ is updated to keep track of the number of true transactions up to that point. If $r_{ij}$ is true, it indicates that by the time the sequence reaches transaction $q_i$, there have been $j$ true transactions from $q_1$ to $q_i$.
+
+By adapting Sinz's method for this new application, our paper highlights the potential versatility of Sequential Counter Encodings in addressing a wider range of logical constraints, extending its usefulness beyond the original AMK problems.

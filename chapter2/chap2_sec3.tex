@@ -1,5 +1,5 @@
 \section{Base constraints}
-To resolve the itemset mining problem, we using the SAT encoding approach\cite{ism_satapproach}.
+To resolve the itemset mining problem, we using the SAT encoding approach \cite{ism_satapproach}.
 In essence, SAT encoding involves the creation of variables and the imposition of constraints to represent the itemset mining problem.
 These variables serve to denote the presence or absence of items within a candidate itemset and are subjected to linear inequalities to ensure the itemset's support.
 
@@ -67,5 +67,9 @@ The itemset mining problem will be defined as:
          & q_1 + q_2 + q_3 + q_4 + q_5 \geq \lambda
     \end{aligned}
 \end{equation*}
+
+
+In this section, we have encoded the problem of item set mining in terms of constraints \ref{eq:2}, \ref{eq:3} and \ref{eq:4}.
+With constraint \ref{eq:4}, we ensure that the number of transactions $q_i$ that contain the itemset $X$ is at least $\lambda$.
 
 In the next step, we must encode constraint \ref{eq:4} into CNF formula.

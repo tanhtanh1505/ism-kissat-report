@@ -6,7 +6,7 @@ Itemset mining, a fundamental task in data mining, plays a pivotal role in disco
 
 In this thesis, we delve into the realm of itemset mining and its crucial importance in various domains such as market basket analysis, bioinformatics, and web usage mining. We explore the significance of itemset mining in uncovering hidden patterns, aiding decision-making processes, and enhancing business strategies.
 
-Furthermore, we aim to optimize the itemset mining process by leveraging the Sequential Encounter Encoding method for SAT encoding. This innovative approach offers a novel perspective on encoding itemset mining problems into Boolean satisfiability (SAT) instances, paving the way for efficient and scalable solutions.
+Furthermore, we aim to optimize the itemset mining process by leveraging the Sequential Counter Encoding method for SAT encoding. This innovative approach offers a novel perspective on encoding itemset mining problems into Boolean satisfiability (SAT) instances, paving the way for efficient and scalable solutions.
 
 The subsequent chapters of this thesis are structured as follows:
 
@@ -14,9 +14,14 @@ The subsequent chapters of this thesis are structured as follows:
 
 \textbf{Chapter 2}: We delve into the construction of base constraints for itemset mining problems and their encoding into SAT. This includes an exploration of the process of deriving constraints from standard itemset mining algorithms, along with an analysis of their limitations.
 
-\textbf{Chapter 3}: Here, we discuss the Sequential Encounter Encoding method as a novel approach to encoding itemset mining problems into SAT instances. We delve into the intricacies of this encoding technique and highlight its advantages over traditional methods.
+\textbf{Chapter 3}: Firstly, we discuss the Sequential Counter Encoding method as a novel approach to encoding itemset mining problems into SAT instances.
+Step to step to implement the OSC from the original work of Carsten Sinz for the "at most k" problem.
+Then, we introduce the New Sequential Counter Encoding (NSC) method, specifically designed for the "at least k" problem in itemset mining.
+We delve into the intricacies of this encoding technique and highlight its advantages over traditional methods.
 
-\textbf{Chapter 4}: This chapter presents the results of experimental evaluations conducted on both synthetic and real-world datasets. We compare the performance of the Sequential Encounter Encoding method with existing approaches to showcase its efficacy and scalability.
+\textbf{Chapter 4}: This chapter presents the results of experimental evaluations conducted on both synthetic and real-world datasets.
+We compare the performance of the Sequential Counter Encoding method with existing approaches to showcase its efficacy and scalability.
+With standard method can only handle small datasets, we demonstrate the scalability and efficiency of the Sequential Counter Encoding methods (OSC and NSC) in processing large datasets.
 
 \textbf{Chapter 5}: Finally, we conclude our findings, summarizing the contributions of this research and discussing potential avenues for future exploration in the field of itemset mining and SAT encoding.
 

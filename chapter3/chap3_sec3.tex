@@ -1,98 +1,115 @@
-\section{Implement Sequential Encounter Encoding}
+\section{New Sequential Counter Encoding}
 
-The sequential encounter encoding method is implemented in Python.
-You can found source code in tanhtanh1505/ism-kissat\footnote{\url{https://github.com/tanhtanh1505/ism-kissat}}.
-The implementation is based on the SAT-based encoding of itemset mining problem.
-The main difference is that the sequential encounter encoding method encodes the constraints for the sequential encounter of items in the transactions.
-The implementation is provided in the \texttt{sequential\_encounter.py} file.
+We divide the process into two parts. The first part involves constructing the variables $r_{ij}$,
+and the second part involves adding the requirement that at least $\lambda$ transactions must be true.
+\subsection{Construct register}
 
-For constraint at least one bit of register $i$ is true when $q_i$ is true (\ref{eq:at_least_one_bit_true_when_q_i_true})
-and bit i of register i is false when $q_i$ is false (\ref{eq:bit_i_of_register_i_false_when_q_i_false}).
-\begin{algorithm}
-    \begin{algorithmic}[1]
-        \State \textbf{Input}: number of transactions $n$, min support $\lambda$
-        \State \textbf{Output}: constraints c
-        \State c = []
-        \For{$i=1$ to $n$}
-        \State c.append($\neg q_i \vee r_{i,1}$)
-        \If{$i \le \lambda$}
-        \State c.append($q_i \vee r_{i,1}$)
-        \EndIf
-        \EndFor
-        \State \textbf{return} c
-    \end{algorithmic}
-\end{algorithm}
+First of all, we introduce the following constraint to establish the fundamental relationship between $q$ and $r$:
+\begin{equation}
+    \label{eq:at_least_one_bit_true_when_q_i_true}
+    \bigwedge_{i=1}^{n} \left( q_i \rightarrow r_{i1} \right)
+\end{equation}
 
-\vspace{15cm}
-Next step, we implement code to disregard some bits of register
-when $i \le \lambda$ (\ref{eq:disregard_when_i_less_than_lambda})
-\begin{algorithm}
-    \begin{algorithmic}[1]
-        \State \textbf{Input}: number of transactions $n$, min support $\lambda$
-        \State \textbf{Output}: constraints c
-        \State c = []
-        \For{$i=1$ to $\lambda$}
-        \For{$j=i+1$ to $\lambda + 1$}
-        \State c.append($\neg r_{i,j}$)
-        \EndFor
-        \EndFor
-        \State \textbf{return} c
-    \end{algorithmic}
-\end{algorithm}
+This constraint ensures that if $q_i$ is true, then the first bit of register $i$ will also be true. In other words, when processing $q_i$ and $q_i$ is true,
+we can guarantee that at least one transaction $q$ from $q_1$ to $q_i$ is true.
+While there may be more than one transaction that containt the expected itemset, we only ensuring a minimum of one transaction is true.
 
-We add the following code for relationship between the value of $q_i$ and the previous result when processing up to $i-1$ (\ref{eq:relationship_between_q_i_and_previous_result})
-\begin{algorithm}
-    \begin{algorithmic}[1]
-        \State \textbf{Input}: number of transactions $n$, min support $\lambda$
-        \State \textbf{Output}: constraints c
-        \State c = []
-        \For{$i=2$ to $n+1$}
-        \For{$j=1$ to $\lambda + 1$}
-        \State c.append($\neg r_{i-1,j} \vee r_{i,j}$)
-        \EndFor
-        \EndFor
-        \State \textbf{return} c
-    \end{algorithmic}
-\end{algorithm}
+When $i < \lambda$, if $q_i$ is false, bit $i$ of register $i$ will be false.
+Suppose all transactions from $q_1$ to $q_{i-1}$ are true, but $q_i$ is false, then $r_{i,i}$ will be false.
+This constraint is expressed as:
+\begin{equation}
+    \label{eq:bit_i_of_register_i_false_when_q_i_false}
+    \bigwedge_{i=1}^{\lambda} \left( \neg q_i \rightarrow \neg r_{ii} \right)
+\end{equation}
 
-\leftline{And 3 constraints}
-\begin{itemize}
-    \item $q_i$ is true add one true transaction to the previous result when processing up to $i-1$ (\ref{eq:previous_result_without_q_i_true_and_q_i_true_then_register_true})
-    \item $q_i$ being false does not affect the result of register $i$ (\ref{eq:no_change_when_q_i_false})
-    \item  the sequential order of bits in register $i$ (\ref{eq:sequential_order})
-\end{itemize}
 
-\begin{algorithm}
-    \begin{algorithmic}[1]
-        \State \textbf{Input}: number of transactions $n$, min support $\lambda$
-        \State \textbf{Output}: constraints c
-        \State c = []
-        \For{$i=2$ to $n+1$}
-        \For{$j=1$ to $\lambda + 1$}
-        \If{$j > 1$}
-        \State c.append($\neg q_i \vee \neg r_{i-1,j-1} \vee r_{ij}$)
-        \State c.append($r_{i-1,j} \vee r_{i-1,j-1} \vee \neg r_{ij}$)
-        \EndIf
-        \State c.append($q_i \vee r_{i-1,j} \vee \neg r_{ij}$)
-        \EndFor
-        \EndFor
-        \State \textbf{return} c
-    \end{algorithmic}
-\end{algorithm}
+Nextly, we have a constraint that allows us to disregard cases where the number of processed transactions is less than $\lambda$:
+\begin{equation}
+    \label{eq:disregard_when_i_less_than_lambda}
+    \bigwedge_{i=1}^{\lambda-1} \bigwedge_{j=i+1}^{\lambda} \left( \neg r_{ij} \right)
+\end{equation}
 
-\vspace{15cm}
-\leftline{Finally, we use below code for adding rule require at least k (constraints \ref{eq:ensure_lambda_transactions}, \ref{eq:must_have_true_lambda_transactions_before_q_n_false}, \ref{eq:at_least_lambda_transactions})}
-\begin{algorithm}
-    \begin{algorithmic}[1]
-        \State \textbf{Input}: number of transactions $n$, min support $\lambda$
-        \State \textbf{Output}: constraints c
-        \State c = []
-        \State c.append($r_{n-1,\lambda} \vee q_n$)
-        \State c.append($r_{n-1,\lambda} \vee r_{n-1,\lambda-1}$)
-        \State c.append($q_n \vee r_{n-1,\lambda}$)
-        \For{$i=k+1$ to $n+1$}
-        \State c.append($q_i \vee \neg r_{i,k} \vee r_{i-1,k}$)
-        \EndFor
-        \State \textbf{return} c
-    \end{algorithmic}
-\end{algorithm}
+This constraint ensures that if $i$ is less than $\lambda$, all bits after $i$ in register $i$ will be false.
+In practice, it has been observed that in order to have at least $\lambda$ transactions that are true from $q_1$ to $q_i$,
+we need to process at least $\lambda$ transactions.
+Therefore, we can disregard cases where the number of processed transactions is less than $\lambda$.
+
+Additionally, we have a constraint that allows us to clone the previous result of the register to the next register:
+\begin{equation}
+    \label{eq:relationship_between_q_i_and_previous_result}
+    \bigwedge_{i=2}^{n} \bigwedge_{j=1}^{\lambda} \left( r_{i-1,j} \rightarrow r_{ij} \right)
+\end{equation}
+
+This constraint demonstrates that if there are at least $j$ transactions that are true from $q_1$ to $q_{i-1}$,
+it is a fact that there are at least $j$ transactions that are true from $q_1$ to $q_i$, regardless of the value of $q_i$.
+
+Next, as we process the transaction $q_i$ and consider its value, we need to take into account the previous result that does not include the transaction $q_i$.
+This leads us to the following constraint:
+\begin{equation}
+    \label{eq:previous_result_without_q_i_true_and_q_i_true_then_register_true}
+    \bigwedge_{i=2}^{n} \bigwedge_{j=2}^{\lambda} \left( q_{i} \wedge r_{i-1,j-1} \rightarrow r_{ij} \right)
+\end{equation}
+
+This constraint establishes the relationship between the value of $q_i$ and the previous result
+when processing up to $i-1$.
+Whether $q_i$ is true or false determines whether the result of register $i$
+is true or false.
+Additionally, the previous result at bit $i$ influences the result of register $i$ at bit $j$.
+In other words, if there are $j-1$ transactions that are true from $q_1$ to $q_{i-1}$,
+and $q_i$ is true, then there are $j$ transactions that are true from $q_1$ to $q_i$.
+
+If both $r_{i-1,j}$ and $q_i$ are false, we guarantee that $r_{ij}$ will also be false:
+\begin{equation}
+    \label{eq:no_change_when_q_i_false}
+    \bigwedge_{i=2}^{n} \bigwedge_{j=1}^{\lambda} \left( \neg q_{i} \wedge \neg r_{i-1,j} \rightarrow \neg r_{ij} \right)
+\end{equation}
+
+When $q_i$ is false and there are not $j$ transactions that are true from $q_1$ to $q_{i-1}$,
+then there will also not be $j$ transactions that are true from $q_1$ to $q_i$.
+In other words, the value of $q_i$ being false does not affect the result of register $i$.
+
+To enforce the sequential order of bits in register $i$, make sure not have bit 0 before bit 1 in register $i$, we can use the following constraint:
+\begin{equation}
+    \label{eq:sequential_order}
+    \bigwedge_{i=2}^{n} \bigwedge_{j=2}^{\lambda} \left( \neg r_{i-1,j} \wedge \neg r_{i-1,j-1} \rightarrow \neg r_{ij} \right)
+\end{equation}
+
+This constraint ensures that if both bit $j$ and bit $j-1$ of register $i-1$ are false,
+then bit $j$ of register $i$ will also be false.
+In other words, if transaction $q_{i-1}$ is false and there are not having $j$ true transactions from $q_1$ to $q_{i-1}$,
+then when processing the next transaction $q_i$, there will also not be $j$ true transactions from $q_1$ to $q_i$.
+The best case scenario is that there can only be $j-1$ true transactions.
+
+\subsection{At least $\lambda$ required}
+
+Firstly, to ensure having extract $\lambda$ transactions contains item set $X$ from $q_1$ to $q_n$, we can impose the following constraint:
+\begin{equation}
+    \label{eq:ensure_lambda_transactions}
+    r_{n-1,\lambda} \vee (q_n \wedge r_{n-1,\lambda-1})
+\end{equation}
+
+This ensures that when processing $q_{n-1}$, there are either at least $\lambda$ transactions that are true from $q_1$ to $q_{n-1}$,
+or there are $\lambda - 1$ transactions that are true from $q_1$ to $q_{n-1}$ and $q_n$ is true.
+
+Secondly, if the value of $q_n$ is false, to having at least $\lambda$ true transactions,
+we need $r_{n-1,\lambda}$ must be true.
+This ensures that there are at least $\lambda$ transactions that are true from $q_1$ to $q_{n-1}$.
+
+\begin{equation}
+    \label{eq:must_have_true_lambda_transactions_before_q_n_false}
+    \neg q_n \rightarrow r_{n-1,\lambda}
+\end{equation}
+
+Finally, we have the constraint for all $i > \lambda$
+\begin{equation}
+    \label{eq:at_least_lambda_transactions}
+    \bigwedge_{i=\lambda + 1}^{n} \left( \neg q_i \wedge r_{i,\lambda} \rightarrow r_{i-1,\lambda} \right)
+\end{equation}
+
+It ensures sure that if $q_i$ is false but when process to it, there are already having $\lambda$ transactions is true from $q_1$ to $q_i$.
+This is only because of the previous transactions from $q_1$ to $q_{i-1}$ has $\lambda$ transactions that are contain item set $X$.
+
+We have completed the process of defining the constraints for solving the
+"at least k" problem in itemset mining, replacing equation \ref{eq:4}.
+By combining all the constraints together, including equations \ref{eq:2} and \ref{eq:3} from section 2,
+we obtain the final CNF encoding for the itemset mining problem.

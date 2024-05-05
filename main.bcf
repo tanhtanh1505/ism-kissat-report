@@ -2383,10 +2383,12 @@
     <bcf:citekey order="20" intorder="1">kissat_jku</bcf:citekey>
     <bcf:citekey order="21" intorder="1">ism_satapproach</bcf:citekey>
     <bcf:citekey order="22" intorder="1">carstensinz</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">fimi</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">cp4im</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">constraint_programming</bcf:citekey>
-    <bcf:citekey order="26" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">carstensinz</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">carstensinz</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">fimi</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">cp4im</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">constraint_programming</bcf:citekey>
+    <bcf:citekey order="28" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
